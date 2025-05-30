@@ -1,0 +1,20 @@
+{
+  "name": "geo-explorer-be",
+  "version": "1.0.0",
+  "description": "geo-explorer-be",
+  "main": "listen.js",
+  "scripts": {
+    "setup-dbs": "psql -f ./db/setup-dbs.sql",
+    "seed-dev": "node ./db/seeds/run-seed.js",
+    "test": "jest --runInBand",
+    "test-seed": "jest seed.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "jest": "^29.7.0",
+    "pg": "^8.16.0",
+    "pg-format": "^1.0.4"
+  }
+}
