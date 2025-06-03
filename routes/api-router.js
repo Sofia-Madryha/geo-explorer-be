@@ -4,8 +4,6 @@ const learningCardsRouter = require("./learningCards-Router");
 
 const apiRouter = require("express").Router();
 
-const apiRouter = require("express").Router();
-
 //Routes
 apiRouter.get("/", getApi);
 apiRouter.use("/categories", categoriesRouter);
