@@ -117,20 +117,24 @@ describe(" GET/ Multi-choice questions and answers", () => {
   });
   test("400: responds with Bad Request when passed invalid level query", () => {
     return request(app)
-    .get("/api/multichoice-qa?level=potato&&continent=asia&&sub_category_id=3")
-    .expect(400)
-    .then(({body}) => {
-      expect(body.msg).toBe("Bad Request")
-    })
-  })
+      .get(
+        "/api/multichoice-qa?level=potato&&continent=asia&&sub_category_id=3"
+      )
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Bad Request");
+      });
+  });
   test("400: responds with Bad Request when passed invalid continent query", () => {
     return request(app)
-    .get("/api/multichoice-qa?level=Beginner&&continent=potato&&sub_category_id=3")
-    .expect(400)
-    .then(({body}) => {
-      expect(body.msg).toBe("Bad Request")
-    })
-  })
+      .get(
+        "/api/multichoice-qa?level=Beginner&&continent=potato&&sub_category_id=3"
+      )
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Bad Request");
+      });
+  });
 });
 
 describe("2. 404: Not Found - BAD url-error", () => {
@@ -171,12 +175,317 @@ describe("3. GET /api/learning-cards/sub-category/:sub_category_id", () => {
         expect(res.body.msg).toBe("404 Not Found");
       });
   });
-  test("3c. 400: return 400 Bad Request if sub_category_id is not a number", () => {
+});
+
+describe(" GET /api/users", () => {
+  test("1 200-responds with an array of users object", () => {
     return request(app)
-      .get("/api/learning-cards/sub-categories/abc")
+      .get("/api/users")
+      .expect(200)
+      .then(({ body: { users } }) => {
+        users.forEach((user) => {
+          expect(user).toMatchObject({
+            user_id: expect.any(Number),
+            username: expect.any(String),
+            level_nature: expect.any(String),
+            level_territory: expect.any(String),
+            rating: expect.any(Number),
+            avatar_url: expect.any(String),
+          });
+        });
+      });
+  });
+});
+
+describe(" POST /api/users", () => {
+  test("1 201: Respond with the added user obj", () => {
+    const postObj = {
+      username: "new-user",
+      avatar_url: "https://avatar.iran.liara.run/public/23",
+    };
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
+      .expect(201)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: expect.any(Number),
+          username: "new-user",
+          level_nature: "beginner",
+          level_territory: "beginner",
+          rating: 0,
+          avatar_url: "https://avatar.iran.liara.run/public/23",
+        });
+      });
+  });
+
+  test("2 409: Respond with username already exists! msg when trying to add user with username already exist in database", () => {
+    const postObj = {
+      username: "lisa_j",
+      avatar_url: "https://avatar.iran.liara.run/public/23",
+    };
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
+      .expect(409)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("username already exists!");
+      });
+  });
+
+  test("3 400: Respond with Bad Request! msg when trying to add user with empty object in post object", () => {
+    const postObj = {};
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
       .expect(400)
-      .then((res) => {
-        expect(res.body.msg).toBe("400 Bad Request");
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("4 400: Respond with Bad Request! msg when trying to add user without avatar_url in post object", () => {
+    const postObj = {
+      username: "test-user",
+    };
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("5 400: Respond with Bad Request! msg when trying to add user without username in post object", () => {
+    const postObj = {
+      avatar_url: "avatarUrl",
+    };
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("6 400: Respond with Bad Request! msg when trying to add user with incorrect datatype in post object", () => {
+    const postObj = {
+      username: [1, 2, 3],
+      avatar_url: 456,
+    };
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("7 400: Respond with Bad Request! msg when trying to add user with empty strings in post object", () => {
+    const postObj = {
+      username: " ",
+      avatar_url: "",
+    };
+
+    return request(app)
+      .post("/api/users")
+      .send(postObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+});
+
+describe(" GET /api/users/:username", () => {
+  test("1 200-responds with a user object", () => {
+    return request(app)
+      .get("/api/users/susanzzzz")
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 2,
+          username: "susanzzzz",
+          level_nature: "intermediate",
+          level_territory: "intermediate",
+          rating: 60,
+          avatar_url: "https://avatar.iran.liara.run/public/77",
+        });
+      });
+  });
+
+  test("2 404-Respond with username Not Found! msg when provided username not in database", () => {
+    return request(app)
+      .get("/api/users/NotAUsername")
+      .expect(404)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("username Not Found!");
+      });
+  });
+});
+
+describe(" PATCH /api/users/:username", () => {
+  test("1 200: Respond with an updated user object with updated level_nature", () => {
+    const patchObj = { level_nature: "intermediate" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "intermediate",
+          level_territory: "intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+        });
+      });
+  });
+
+  test("2 200: Respond with an updated user object with updated level_territory", () => {
+    const patchObj = { level_territory: "advance" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "beginner",
+          level_territory: "advance",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+        });
+      });
+  });
+
+  test("3 200: Respond with an updated user object with updated rating", () => {
+    const patchObj = { rating: 100 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "beginner",
+          level_territory: "intermediate",
+          rating: 100,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+        });
+      });
+  });
+
+  test("4 200: Respond with an updated user object with updated avatar_url", () => {
+    const patchObj = { avatar_url: "newUrl" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "beginner",
+          level_territory: "intermediate",
+          rating: 15,
+          avatar_url: "newUrl",
+        });
+      });
+  });
+
+  test("5 200: Respond with an updated user object with updated level_nature and rating", () => {
+    const patchObj = { level_nature: "intermediate", rating: 50 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "intermediate",
+          level_territory: "intermediate",
+          rating: 50,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+        });
+      });
+  });
+
+  test("6 404: Respond with username Not Found! msg when trying to update user with username not in database", () => {
+    const patchObj = { level_nature: "intermediate", rating: 50 };
+
+    return request(app)
+      .patch("/api/users/NotAUsername")
+      .send(patchObj)
+      .expect(404)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("username Not Found!");
+      });
+  });
+
+  test("7 400: Respond with Bad Request! msg when trying to update user with empty patch object", () => {
+    const patchObj = {};
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("8 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { level_nature: 123 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("9 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { rating: "high" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("10 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
+    const patchObj = { level_nature: " " };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
       });
   });
 });

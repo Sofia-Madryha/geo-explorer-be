@@ -97,11 +97,11 @@ const seed = ({
     .then(() => {
       return db.query(`CREATE TABLE users (
         user_id SERIAL PRIMARY KEY,
-        username VARCHAR(50),
+        username VARCHAR(50) UNIQUE NOT NULL,
         level_nature VARCHAR(20) DEFAULT 'beginner',
         level_territory VARCHAR(20) DEFAULT 'beginner',
         rating INT DEFAULT 0,
-        avatar_url VARCHAR(1000))`);
+        avatar_url VARCHAR(1000) NOT NULL)`);
     })
     .then(() => {
       const formattedCategory = categoriesData.map((category) => {
