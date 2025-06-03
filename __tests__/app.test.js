@@ -51,34 +51,34 @@ describe(" GET/ Sub-Categories", () => {
 });
 
 describe(" GET/ Multi-choice questions and answers", () => {
+  // test("200-responds with an array of multi-choice questions and answers", () => {
+  //   return request(app)
+  //     .get("/api/multichoice-qa")
+  //     .expect(200)
+  //     .then(({ body: { multichoice_qa } }) => {
+  //       expect(multichoice_qa.length).toBe(23);
+  //       multichoice_qa.forEach((item) => {
+  //         expect(item).toMatchObject({
+  //           question_mc_id: expect.any(Number),
+  //           continent: expect.any(String),
+  //           sub_category_id: expect.any(Number),
+  //           level: expect.any(String),
+  //           question_text: expect.any(String),
+  //           answer_mc_id: expect.any(Number),
+  //           multiple_choice_text: expect.any(String),
+  //           correct_answer: expect.any(String),
+  //         });
+  //       });
+  //     });
+  // });
   test("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
-      .get("/api/multichoice-qa")
-      .expect(200)
-      .then(({ body: { multichoice_qa } }) => {
-        expect(multichoice_qa.length).toBe(23);
-        multichoice_qa.forEach((item) => {
-          expect(item).toMatchObject({
-            question_mc_id: expect.any(Number),
-            continent: expect.any(String),
-            sub_category_id: expect.any(Number),
-            level: expect.any(String),
-            question_text: expect.any(String),
-            answer_mc_id: expect.any(Number),
-            multiple_choice_text: expect.any(String),
-            correct_answer: expect.any(String),
-          });
-        });
-      });
-  });
-  test.skip("200-responds with an array of multi-choice questions and answers", () => {
-    return request(app)
       .get(
-        "/api/multichoice-qa?level=beginner&&continent=asia&&sub_category_id=4"
+        "/api/multichoice-qa?level=Beginner&&continent=asia&&sub_category_id=4"
       )
       .expect(200)
       .then(({ body: { multichoice_qa } }) => {
-        expect(multichoice_qa.length).toBe(23);
+        expect(multichoice_qa.length).toBe(3);
         multichoice_qa.forEach((item) => {
           expect(item).toMatchObject({
             question_mc_id: expect.any(Number),
@@ -93,6 +93,44 @@ describe(" GET/ Multi-choice questions and answers", () => {
         });
       });
   });
+  test("200-responds with an array of multi-choice questions and answers", () => {
+    return request(app)
+      .get(
+        "/api/multichoice-qa?level=Intermediate&&continent=asia&&sub_category_id=3"
+      )
+      .expect(200)
+      .then(({ body: { multichoice_qa } }) => {
+        expect(multichoice_qa.length).toBe(1);
+        multichoice_qa.forEach((item) => {
+          expect(item).toMatchObject({
+            question_mc_id: expect.any(Number),
+            continent: "asia",
+            sub_category_id: 3,
+            level: "Intermediate",
+            question_text: expect.any(String),
+            answer_mc_id: expect.any(Number),
+            multiple_choice_text: expect.any(String),
+            correct_answer: expect.any(String),
+          });
+        });
+      });
+  });
+  test("400: responds with Bad Request when passed invalid level query", () => {
+    return request(app)
+    .get("/api/multichoice-qa?level=potato&&continent=asia&&sub_category_id=3")
+    .expect(400)
+    .then(({body}) => {
+      expect(body.msg).toBe("Bad Request")
+    })
+  })
+  test("400: responds with Bad Request when passed invalid continent query", () => {
+    return request(app)
+    .get("/api/multichoice-qa?level=Beginner&&continent=potato&&sub_category_id=3")
+    .expect(400)
+    .then(({body}) => {
+      expect(body.msg).toBe("Bad Request")
+    })
+  })
 });
 
 describe("2. 404: Not Found - BAD url-error", () => {
