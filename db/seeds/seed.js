@@ -8,6 +8,9 @@ const seed = ({
   learningCardsData,
   answersMultipleChoicesData,
   questionsMultipleChoicesData,
+  answersMatchingPairsData,
+  questionsMatchingPairsData,
+  usersData,
 }) => {
   return db
     .query(`DROP TABLE IF EXISTS learning_cards;`)
@@ -15,13 +18,22 @@ const seed = ({
       return db.query(`DROP TABLE IF EXISTS answers_multiple_choices;`);
     })
     .then(() => {
-      return db.query(`DROP TABLE IF EXISTS questions_multiple_answers;`);
+      return db.query(`DROP TABLE IF EXISTS questions_multiple_choices;`);
+    })
+    .then(() => {
+      return db.query(`DROP TABLE IF EXISTS answers_matching_pairs;`);
+    })
+    .then(() => {
+      return db.query(`DROP TABLE IF EXISTS questions_matching_pairs;`);
     })
     .then(() => {
       return db.query(`DROP TABLE IF EXISTS sub_categories;`);
     })
     .then(() => {
       return db.query(`DROP TABLE IF EXISTS categories;`);
+    })
+    .then(() => {
+      return db.query(`DROP TABLE IF EXISTS users;`);
     })
     .then(() => {
       return db.query(`CREATE TABLE categories (
@@ -39,7 +51,24 @@ const seed = ({
               );`);
     })
     .then(() => {
-      return db.query(`CREATE TABLE questions_multiple_answers (
+      return db.query(`CREATE TABLE questions_matching_pairs (
+            question_pairs_id SERIAL PRIMARY KEY,
+            continent VARCHAR(50),
+            sub_category_id INT REFERENCES sub_categories(sub_category_id),
+            level VARCHAR(50),
+            question_text TEXT
+        );`);
+    })
+    .then(() => {
+      return db.query(`CREATE TABLE answers_matching_pairs (
+            answer_pairs_id SERIAL PRIMARY KEY,
+            question_pairs_id INT REFERENCES questions_matching_pairs(question_pairs_id),
+            left_text VARCHAR(500),
+            right_text VARCHAR(500)
+        );`);
+    })
+    .then(() => {
+      return db.query(`CREATE TABLE questions_multiple_choices (
             question_mc_id SERIAL PRIMARY KEY,
             continent VARCHAR(50),
             sub_category_id INT REFERENCES sub_categories(sub_category_id),
@@ -50,7 +79,7 @@ const seed = ({
     .then(() => {
       return db.query(`CREATE TABLE answers_multiple_choices (
             answer_mc_id SERIAL PRIMARY KEY,
-            question_mc_id INT REFERENCES questions_multiple_answers(question_mc_id),
+            question_mc_id INT REFERENCES questions_multiple_choices(question_mc_id),
             multiple_choice_text VARCHAR(500),
             correct_answer VARCHAR(100)
         );`);
@@ -64,6 +93,15 @@ const seed = ({
             description TEXT,
             img_url VARCHAR(1000)
         );`);
+    })
+    .then(() => {
+      return db.query(`CREATE TABLE users (
+        user_id SERIAL PRIMARY KEY,
+        username VARCHAR(50),
+        level_nature VARCHAR(20) DEFAULT 'beginner',
+        level_territory VARCHAR(20) DEFAULT 'beginner',
+        rating INT DEFAULT 0,
+        avatar_url VARCHAR(1000))`);
     })
     .then(() => {
       const formattedCategory = categoriesData.map((category) => {
@@ -90,16 +128,60 @@ const seed = ({
       return db.query(insertSubCategoriesQuery);
     })
     .then(() => {
-      const formattedQuestionsMC = questionsMultipleChoicesData.map((question) => {
-        return [
-          question.continent,
-          question.sub_category_id,
-          question.level,
-          question.question_text
-        ];
-      });
+      const formattedQuestionsMatching = questionsMatchingPairsData.map(
+        (question) => {
+          return [
+            question.continent,
+            question.sub_category_id,
+            question.level,
+            question.question_text,
+          ];
+        }
+      );
+      const insertQuestionsMatchingQuery = format(
+        `INSERT INTO questions_matching_pairs (
+            continent,
+            sub_category_id,
+            level,
+            question_text
+        ) VALUES %L`,
+        formattedQuestionsMatching
+      );
+      return db.query(insertQuestionsMatchingQuery);
+    })
+    .then(() => {
+      const formattedAnswersMatching = answersMatchingPairsData.map(
+        (answer) => {
+          return [
+            answer.question_pairs_id,
+            answer.left_text,
+            answer.right_text,
+          ];
+        }
+      );
+      const insertAnswersMatchingQuery = format(
+        `INSERT INTO answers_matching_pairs (
+            question_pairs_id,
+            left_text,
+            right_text
+        ) VALUES %L`,
+        formattedAnswersMatching
+      );
+      return db.query(insertAnswersMatchingQuery);
+    })
+    .then(() => {
+      const formattedQuestionsMC = questionsMultipleChoicesData.map(
+        (question) => {
+          return [
+            question.continent,
+            question.sub_category_id,
+            question.level,
+            question.question_text,
+          ];
+        }
+      );
       const insertQuestionsMCQuery = format(
-        `INSERT INTO questions_multiple_answers (
+        `INSERT INTO questions_multiple_choices (
             continent,
             sub_category_id,
             level,
@@ -114,7 +196,7 @@ const seed = ({
         return [
           answer.question_mc_id,
           answer.multiple_choice_text,
-          answer.correct_answer
+          answer.correct_answer,
         ];
       });
       const insertAnswersMCQuery = format(
@@ -144,10 +226,26 @@ const seed = ({
       return db.query(insertLearningCardsQuery);
     })
     .then(() => {
-      console.log("Seed completed!");
+      const formattedUsers = usersData.map((user) => {
+        return [
+          user.username,
+          user.level_nature,
+          user.level_territory,
+          user.rating,
+          user.avatar_url,
+        ];
+      });
+      const insertUsersQuery = format(
+        `INSERT INTO users(username, level_nature, level_territory, rating, avatar_url) VALUES %L`,
+        formattedUsers
+      );
+      return db.query(insertUsersQuery);
     })
     .then(() => {
       console.log("Seed completed!");
+    })
+    .catch((err) => {
+      console.log("Seeding error:", err);
     });
 };
 
