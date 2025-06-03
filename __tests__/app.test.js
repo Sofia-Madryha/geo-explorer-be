@@ -51,7 +51,7 @@ describe(" GET/ Sub-Categories", () => {
 });
 
 describe(" GET/ Multi-choice questions and answers", () => {
-  test.only("200-responds with an array of multi-choice questions and answers", () => {
+  test("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
       .get("/api/multichoice-qa")
       .expect(200)
@@ -133,15 +133,12 @@ describe("3. GET /api/learning-cards/sub-category/:sub_category_id", () => {
         expect(res.body.msg).toBe("404 Not Found");
       });
   });
-  test("3c. 500: handle internal server error", () => {
-    const db = require("../db/connection");
-    jest.spyOn(db, "query").mockRejectedValueOnce(new Error("DB error"));
+  test("3c. 400: return 400 Bad Request if sub_category_id is not a number", () => {
     return request(app)
-      .get("/api/learning-cards/sub-categories/4")
-      .expect(500)
+      .get("/api/learning-cards/sub-categories/abc")
+      .expect(400)
       .then((res) => {
-        expect(res.body.msg).toBe("500 Internal Server Error");
-        db.query.mockRestore();
+        expect(res.body.msg).toBe("400 Bad Request");
       });
   });
 });
