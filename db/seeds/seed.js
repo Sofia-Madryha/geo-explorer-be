@@ -89,14 +89,16 @@ const seed = ({
       return db.query(insertSubCategoriesQuery);
     })
     .then(() => {
-      const formattedQuestionsMC = questionsMultipleChoicesData.map((question) => {
-        return [
-          question.continent,
-          question.sub_category_id,
-          question.level,
-          question.question_text
-        ];
-      });
+      const formattedQuestionsMC = questionsMultipleChoicesData.map(
+        (question) => {
+          return [
+            question.continent,
+            question.sub_category_id,
+            question.level,
+            question.question_text,
+          ];
+        }
+      );
       const insertQuestionsMCQuery = format(
         `INSERT INTO questions_multiple_answers (
             continent,
@@ -113,7 +115,7 @@ const seed = ({
         return [
           answer.question_mc_id,
           answer.multiple_choice_text,
-          answer.correct_answer
+          answer.correct_answer,
         ];
       });
       const insertAnswersMCQuery = format(
@@ -141,9 +143,6 @@ const seed = ({
         formattedLearningCards
       );
       return db.query(insertLearningCardsQuery);
-    })
-    .then(() => {
-      console.log("Seed completed!");
     })
     .then(() => {
       console.log("Seed completed!");
