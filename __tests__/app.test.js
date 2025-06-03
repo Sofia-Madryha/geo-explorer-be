@@ -41,3 +41,43 @@ describe("2. 404: Not Found - BAD url-error", () => {
       });
   });
 });
+
+describe("3. GET /api/learning-cards/sub-category/:sub_category_id", () => {
+  test("3a. 200: return learning cards array with valid sub_category_id", () => {
+    return request(app)
+      .get("/api/learning-cards/sub-categories/4")
+      .expect(200)
+      .then((res) => {
+        expect(Array.isArray(res.body.learningCards)).toBe(true);
+        expect(res.body.learningCards.length).toBe(8);
+
+        expect(res.body.learningCards[0]).toMatchObject({
+          card_id: expect.any(Number),
+          continent: "asia",
+          sub_category_id: 4,
+          title: expect.any(String),
+          description: expect.any(String),
+          img_url: expect.any(String),
+        });
+      });
+  });
+  test("3b. 404: return 404 Not Found if valid format but not avaliable", () => {
+    return request(app)
+      .get("/api/learning-cards/sub-categories/54321")
+      .expect(404)
+      .then((res) => {
+        expect(res.body.msg).toBe("404 Not Found");
+      });
+  });
+  test("3c. 500: handle internal server error", () => {
+    const db = require("../db/connection");
+    jest.spyOn(db, "query").mockRejectedValueOnce(new Error("DB error"));
+    return request(app)
+      .get("/api/learning-cards/sub-categories/4")
+      .expect(500)
+      .then((res) => {
+        expect(res.body.msg).toBe("500 Internal Server Error");
+        db.query.mockRestore();
+      });
+  });
+});

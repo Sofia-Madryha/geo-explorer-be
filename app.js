@@ -13,4 +13,9 @@ app.all("/*splat", (req, res) => {
   res.status(404).send({ msg: "404 Not Found" });
 });
 
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ msg: "500 Internal Server Error" });
+});
+
 module.exports = app;
