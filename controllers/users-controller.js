@@ -45,10 +45,35 @@ exports.postUser = (req, res, next) => {
 
 exports.updateUserByUsername = (req, res, next) => {
   const { username } = req.params;
-  const { level_nature, level_territory } = req.body;
+  const { level_nature, level_territory, rating, avatar_url } = req.body;
 
-  return patchUserByUsername(username, level_nature, level_territory)
-    .then((user) => {
+  if (
+    Object.keys(req.body).length === 0 ||
+    (level_nature !== undefined &&
+      (typeof level_nature !== "string" || !level_nature.trim())) ||
+    (level_territory !== undefined &&
+      (typeof level_territory !== "string" || !level_territory.trim())) ||
+    (avatar_url !== undefined &&
+      (typeof avatar_url !== "string" || !avatar_url.trim())) ||
+    (rating !== undefined && typeof rating !== "number")
+  ) {
+    return Promise.reject({
+      status: 400,
+      msg: "Bad Request!",
+    });
+  }
+
+  const pendingUsernameCheck = selectUsersByUsername(username);
+  const pendingUserPatch = patchUserByUsername(
+    username,
+    level_nature,
+    level_territory,
+    rating,
+    avatar_url
+  );
+
+  Promise.all([pendingUserPatch, pendingUsernameCheck])
+    .then(([user]) => {
       res.status(200).send({ user });
     })
     .catch(next);

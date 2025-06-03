@@ -5,5 +5,76 @@
   "GET /api/categories": {
     "description": "return an array of categories objects",
     "exampleResponse": {}
+  },
+  "GET /api/learning-cards/sub-category/:sub_category_id": {
+    "description": "Returns learning cards for a specific sub-category",
+    "parameters": {
+      "sub_category_id": "The ID of the sub-category"
+    },
+    "exampleResponse": [
+      {
+        "card_id": 1,
+        "continent": "Asia",
+        "sub_category_id": 4,
+        "title": "Himalayas — Nepal",
+        "description": "The Himalayas are the highest mountain range...",
+        "img_url": "https://example.com/himalayas.jpg"
+      }
+    ]
+  },
+  "GET /api/users": {
+    "description": "return an array of users objects",
+    "exampleResponse": [
+      {
+        "user_id": 1,
+        "username": "john_s",
+        "level_nature": "beginner",
+        "level_territory": "beginner",
+        "rating": 0,
+        "avatar_url": "https://avatar.iran.liara.run/public/35"
+      },
+      {
+        "user_id": 2,
+        "username": "susanzzzz",
+        "level_nature": "intermediate",
+        "level_territory": "intermediate",
+        "rating": 60,
+        "avatar_url": "https://avatar.iran.liara.run/public/77"
+      }
+    ]
+  },
+  "POST /api/users": {
+    "description": "Insert a user to users table",
+    "exampleResponse": {
+      "user_id": 1,
+      "username": "john_s",
+      "level_nature": "beginner",
+      "level_territory": "beginner",
+      "rating": 0,
+      "avatar_url": "https://avatar.iran.liara.run/public/35"
+    }
+  },
+  "GET /api/users/:username": {
+    "description": "return an a user objects",
+    "exampleResponse": {
+      "user_id": 2,
+      "username": "susanzzzz",
+      "level_nature": "intermediate",
+      "level_territory": "intermediate",
+      "rating": 60,
+      "avatar_url": "https://avatar.iran.liara.run/public/77"
+    }
+  },
+  "PATCH /api/users/:username": {
+    "description": "update a user information with provide query info",
+    "queries": ["level_nature", "level_territory", "rating", "avatar_url"],
+    "exampleResponse": {
+      "user_id": 4,
+      "username": "mike_w",
+      "level_nature": "beginner",
+      "level_territory": "intermediate",
+      "rating": 15,
+      "avatar_url": "https://avatar.iran.liara.run/public/12"
+    }
   }
 }

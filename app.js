@@ -37,8 +37,8 @@ app.use((err, req, res, next) => {
 
 // 500 handler
 app.use((err, req, res, next) => {
-  console.log(err, "Unhandled Error");
-  res.status(500).send({ msg: "Internal Server Error!" });
+  console.error(err);
+  res.status(500).json({ msg: "500 Internal Server Error" });
 });
 
 module.exports = app;

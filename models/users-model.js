@@ -29,7 +29,13 @@ exports.insertUser = (username, avatar_url) => {
     });
 };
 
-exports.patchUserByUsername = (username, level_nature, level_territory) => {
+exports.patchUserByUsername = (
+  username,
+  level_nature,
+  level_territory,
+  rating,
+  avatar_url
+) => {
   const queries = [];
 
   if (level_nature) {
@@ -38,6 +44,14 @@ exports.patchUserByUsername = (username, level_nature, level_territory) => {
 
   if (level_territory) {
     queries.push(format(`level_territory = %L`, level_territory));
+  }
+
+  if (rating) {
+    queries.push(format(`rating = %L`, rating));
+  }
+
+  if (avatar_url) {
+    queries.push(format(`avatar_url = %L`, avatar_url));
   }
 
   const patchQuery = format(

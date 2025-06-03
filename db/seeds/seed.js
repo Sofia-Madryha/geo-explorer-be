@@ -114,6 +114,7 @@ const seed = ({
       return db.query(insertCategoriesQuery);
     })
     .then(() => {
+      
       const formattedSubCategory = subCategoriesData.map((sub_category) => {
         return [
           sub_category.sub_category_name,
