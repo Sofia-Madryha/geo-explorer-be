@@ -171,4 +171,12 @@ describe("3. GET /api/learning-cards/sub-category/:sub_category_id", () => {
         expect(res.body.msg).toBe("404 Not Found");
       });
   });
+  test("3c. 400: return 400 Bad Request if sub_category_id is not a number", () => {
+    return request(app)
+      .get("/api/learning-cards/sub-categories/abc")
+      .expect(400)
+      .then((res) => {
+        expect(res.body.msg).toBe("400 Bad Request");
+      });
+  });
 });

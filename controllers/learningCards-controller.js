@@ -1,8 +1,11 @@
-const learningCard = require("../db/data/test-data/learning_cards");
 const { selectLearningCards } = require("../models/learningCards-model");
 
 exports.getLearningCards = (req, res, next) => {
   const { sub_category_id } = req.params;
+
+  if (!/^\d+$/.test(sub_category_id)) {
+    return res.status(400).json({ msg: "400 Bad Request" });
+  }
   selectLearningCards(sub_category_id)
     .then((learningCards) => {
       if (learningCards.length === 0) {
