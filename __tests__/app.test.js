@@ -117,20 +117,24 @@ describe(" GET/ Multi-choice questions and answers", () => {
   });
   test("400: responds with Bad Request when passed invalid level query", () => {
     return request(app)
-    .get("/api/multichoice-qa?level=potato&&continent=asia&&sub_category_id=3")
-    .expect(400)
-    .then(({body}) => {
-      expect(body.msg).toBe("Bad Request")
-    })
-  })
+      .get(
+        "/api/multichoice-qa?level=potato&&continent=asia&&sub_category_id=3"
+      )
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Bad Request");
+      });
+  });
   test("400: responds with Bad Request when passed invalid continent query", () => {
     return request(app)
-    .get("/api/multichoice-qa?level=Beginner&&continent=potato&&sub_category_id=3")
-    .expect(400)
-    .then(({body}) => {
-      expect(body.msg).toBe("Bad Request")
-    })
-  })
+      .get(
+        "/api/multichoice-qa?level=Beginner&&continent=potato&&sub_category_id=3"
+      )
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Bad Request");
+      });
+  });
 });
 
 describe("2. 404: Not Found - BAD url-error", () => {
@@ -476,17 +480,12 @@ describe(" PATCH /api/users/:username", () => {
   test("10 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
     const patchObj = { level_nature: " " };
 
-  test("3c. 400: return 400 Bad Request if sub_category_id is not a number", () => {
     return request(app)
       .patch("/api/users/mike_w")
       .send(patchObj)
       .expect(400)
       .then(({ body: { msg } }) => {
         expect(msg).toBe("Bad Request!");
-      .get("/api/learning-cards/sub-categories/abc")
-      .expect(400)
-      .then((res) => {
-        expect(res.body.msg).toBe("400 Bad Request");
       });
   });
 });
