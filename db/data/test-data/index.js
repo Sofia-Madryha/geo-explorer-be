@@ -1,5 +1,4 @@
 exports.categoriesData = require("./categories.js");
-
 exports.subCategoriesData = require("./sub_categories.js");
 exports.learningCardsData = require("./learning_cards.js");
 exports.answersMultipleChoicesData = require("./answers-multiple-choices.js");
