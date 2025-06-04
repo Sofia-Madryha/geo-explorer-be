@@ -2,6 +2,7 @@ module.exports = [
   {
     question_pairs_id: 1,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 4,
     level: "Beginner",
     question_text: "Match the mountain to its country/region",
@@ -9,6 +10,7 @@ module.exports = [
   {
     question_pairs_id: 2,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 4,
     level: "Intermediate",
     question_text: "Match the mountain range to the country(s)",
@@ -16,6 +18,7 @@ module.exports = [
   {
     question_pairs_id: 3,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 4,
     level: "Advanced",
     question_text: "Match the mountain to its description",
@@ -23,6 +26,7 @@ module.exports = [
   {
     question_pairs_id: 4,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 3,
     level: "Beginner",
     question_text:
@@ -31,6 +35,7 @@ module.exports = [
   {
     question_pairs_id: 5,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 1,
     level: "Beginner",
     question_text: "Match the landscape to its country or region",
@@ -38,6 +43,7 @@ module.exports = [
   {
     question_pairs_id: 6,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 1,
     level: "Intermediate",
     question_text: "Match the landscape to its country",
@@ -45,6 +51,7 @@ module.exports = [
   {
     question_pairs_id: 7,
     continent: "asia",
+    category_id: 1,
     sub_category_id: 1,
     level: "Advanced",
     question_text: "Match the landscape to its key features",
@@ -52,6 +59,7 @@ module.exports = [
   {
     question_pairs_id: 8,
     continent: "asia",
+    category_id: 2,
     sub_category_id: 2,
     level: "Beginner",
     question_text: "Match the country to its capital",
@@ -59,6 +67,7 @@ module.exports = [
   {
     question_pairs_id: 9,
     continent: "asia",
+    category_id: 2,
     sub_category_id: 2,
     level: "Intermediate",
     question_text: "Match the country to its official language(s)",
@@ -66,6 +75,7 @@ module.exports = [
   {
     question_pairs_id: 10,
     continent: "asia",
+    category_id: 2,
     sub_category_id: 2,
     level: "Advanced",
     question_text: "Match the country to its population range",
