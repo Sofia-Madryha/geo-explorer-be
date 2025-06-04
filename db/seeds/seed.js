@@ -54,6 +54,7 @@ const seed = ({
       return db.query(`CREATE TABLE questions_matching_pairs (
             question_pairs_id SERIAL PRIMARY KEY,
             continent VARCHAR(50),
+            category_id INT REFERENCES categories(category_id),
             sub_category_id INT REFERENCES sub_categories(sub_category_id),
             level VARCHAR(50),
             question_text TEXT
@@ -71,6 +72,7 @@ const seed = ({
       return db.query(`CREATE TABLE questions_multiple_choices (
             question_mc_id SERIAL PRIMARY KEY,
             continent VARCHAR(50),
+            category_id INT REFERENCES categories(category_id),
             sub_category_id INT REFERENCES sub_categories(sub_category_id),
             level VARCHAR(50),
             question_text TEXT
@@ -133,6 +135,7 @@ const seed = ({
         (question) => {
           return [
             question.continent,
+            question.category_id,
             question.sub_category_id,
             question.level,
             question.question_text,
@@ -142,6 +145,7 @@ const seed = ({
       const insertQuestionsMatchingQuery = format(
         `INSERT INTO questions_matching_pairs (
             continent,
+            category_id,
             sub_category_id,
             level,
             question_text
@@ -175,6 +179,7 @@ const seed = ({
         (question) => {
           return [
             question.continent,
+            question.category_id,
             question.sub_category_id,
             question.level,
             question.question_text,
@@ -184,6 +189,7 @@ const seed = ({
       const insertQuestionsMCQuery = format(
         `INSERT INTO questions_multiple_choices (
             continent,
+            category_id,
             sub_category_id,
             level,
             question_text
