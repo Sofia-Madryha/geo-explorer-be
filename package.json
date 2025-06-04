@@ -7,7 +7,9 @@
     "setup-dbs": "psql -f ./db/setup-dbs.sql",
     "seed-dev": "node ./db/seeds/run-seed.js",
     "test": "jest --runInBand",
-    "test-seed": "jest seed.test.js"
+    "test-seed": "jest seed.test.js",
+    "start": "node listen.js",
+    "seed-prod": "NODE_ENV=production npm run seed-dev"
   },
   "author": "",
   "license": "ISC",
