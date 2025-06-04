@@ -73,9 +73,7 @@ describe(" GET/ Multi-choice questions and answers", () => {
   // });
   test("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
-      .get(
-        "/api/multichoice-qa?level=Beginner&&continent=asia&&category_id=1"
-      )
+      .get("/api/multichoice-qa?level=Beginner&&continent=asia&&category_id=1")
       .expect(200)
       .then(({ body: { multichoice_qa } }) => {
         expect(multichoice_qa.length).toBe(9);
@@ -117,9 +115,7 @@ describe(" GET/ Multi-choice questions and answers", () => {
   });
   test("400: responds with Bad Request when passed invalid level query", () => {
     return request(app)
-      .get(
-        "/api/multichoice-qa?level=potato&&continent=asia&&category_id=1"
-      )
+      .get("/api/multichoice-qa?level=potato&&continent=asia&&category_id=1")
       .expect(400)
       .then(({ body }) => {
         expect(body.msg).toBe("Bad Request");
@@ -486,6 +482,94 @@ describe(" PATCH /api/users/:username", () => {
       .expect(400)
       .then(({ body: { msg } }) => {
         expect(msg).toBe("Bad Request!");
+      });
+  });
+});
+
+describe("5 Matching pairs - GET /api/matching-pairs", () => {
+  test("5a. 200: returns matching pairs for category_id=1, continent=asia, level=Beginner", () => {
+    return request(app)
+      .get("/api/matching-pairs?category_id=1&continent=asia&level=Beginner")
+      .expect(200)
+      .then(({ body: { matchingPairs } }) => {
+        expect(Array.isArray(matchingPairs)).toBe(true);
+        expect(matchingPairs.length).toBe(3);
+
+        matchingPairs.forEach((item) => {
+          expect(item).toMatchObject({
+            question_pairs_id: expect.any(Number),
+            continent: "asia",
+            category_id: 1,
+            level: "Beginner",
+            question_text: expect.any(String),
+            answers: expect.any(Array),
+          });
+          item.answers.forEach((ans) => {
+            expect(ans).toMatchObject({
+              answer_pairs_id: expect.any(Number),
+              left_text: expect.any(String),
+              right_text: expect.any(String),
+            });
+          });
+        });
+      });
+  });
+
+  test("5b. 200: returns matching pairs filtered only by continent=asia", () => {
+    return request(app)
+      .get("/api/matching-pairs?continent=asia")
+      .expect(200)
+      .then(({ body: { matchingPairs } }) => {
+        expect(Array.isArray(matchingPairs)).toBe(true);
+        expect(matchingPairs.length).toBeGreaterThan(0);
+
+        matchingPairs.forEach((item) => {
+          expect(item.continent.toLowerCase()).toBe("asia");
+          expect(item.answers).toBeDefined();
+          expect(Array.isArray(item.answers)).toBe(true);
+        });
+      });
+  });
+
+  test("5c. 200: returns matching pairs for continent=world (all continents)", () => {
+    return request(app)
+      .get("/api/matching-pairs?continent=world")
+      .expect(200)
+      .then(({ body: { matchingPairs } }) => {
+        expect(Array.isArray(matchingPairs)).toBe(true);
+        expect(matchingPairs.length).toBeGreaterThan(0);
+
+        matchingPairs.forEach((item) => {
+          expect(item.answers).toBeDefined();
+          expect(Array.isArray(item.answers)).toBe(true);
+        });
+      });
+  });
+
+  test("5d. 400: returns Bad Request for invalid continent query", () => {
+    return request(app)
+      .get("/api/matching-pairs?continent=abcde")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("400 Bad Request");
+      });
+  });
+
+  test("5e. 400: returns Bad Request for invalid level query", () => {
+    return request(app)
+      .get("/api/matching-pairs?level=super-hard")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("400 Bad Request");
+      });
+  });
+
+  test("5f. 404: returns Not Found if no matching pairs for given filters", () => {
+    return request(app)
+      .get("/api/matching-pairs?category_id=9999&continent=asia&level=Beginner")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("404 Not Found");
       });
   });
 });
