@@ -76,5 +76,59 @@
       "rating": 15,
       "avatar_url": "https://avatar.iran.liara.run/public/12"
     }
+  },
+  "GET /api/matching-pairs": {
+    "description": "Returns matching pairs filtered by category_id, continent, and level",
+    "queryParameters": {
+      "category_id": {
+        "type": "integer",
+        "required": false,
+        "description": "Filter by category ID"
+      },
+      "continent": {
+        "type": "string",
+        "required": false,
+        "enum": [
+          "asia",
+          "europe",
+          "africa",
+          "south america",
+          "north america",
+          "oceania",
+          "world"
+        ],
+        "description": "Filter by continent; 'world' means all continents"
+      },
+      "level": {
+        "type": "string",
+        "required": false,
+        "enum": ["Beginner", "Intermediate", "Advanced"],
+        "description": "Filter by difficulty level"
+      }
+    },
+    "exampleResponse": {
+      "matchingPairs - GET /api/matching-pairs?category_id=1&continent=asia&level=Beginner": [
+        {
+          "question_pairs_id": 1,
+          "continent": "asia",
+          "category_id": 1,
+          "sub_category_id": 4,
+          "level": "Beginner",
+          "question_text": "Match the mountain to its country/region",
+          "answers": [
+            {
+              "answer_pairs_id": 1,
+              "left_text": "Himalayas",
+              "right_text": "Nepal, India, Bhutan, Tibet, Pakistan"
+            },
+            {
+              "answer_pairs_id": 2,
+              "left_text": "Mount Fuji",
+              "right_text": "Japan"
+            }
+          ]
+        }
+      ]
+    }
   }
 }
