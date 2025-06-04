@@ -74,16 +74,16 @@ describe(" GET/ Multi-choice questions and answers", () => {
   test("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
       .get(
-        "/api/multichoice-qa?level=Beginner&&continent=asia&&sub_category_id=4"
+        "/api/multichoice-qa?level=Beginner&&continent=asia&&category_id=1"
       )
       .expect(200)
       .then(({ body: { multichoice_qa } }) => {
-        expect(multichoice_qa.length).toBe(3);
+        expect(multichoice_qa.length).toBe(9);
         multichoice_qa.forEach((item) => {
           expect(item).toMatchObject({
             question_mc_id: expect.any(Number),
             continent: "asia",
-            sub_category_id: 4,
+            category_id: 1,
             level: "Beginner",
             question_text: expect.any(String),
             answer_mc_id: expect.any(Number),
@@ -96,16 +96,16 @@ describe(" GET/ Multi-choice questions and answers", () => {
   test("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
       .get(
-        "/api/multichoice-qa?level=Intermediate&&continent=asia&&sub_category_id=3"
+        "/api/multichoice-qa?level=Intermediate&&continent=asia&&category_id=1"
       )
       .expect(200)
       .then(({ body: { multichoice_qa } }) => {
-        expect(multichoice_qa.length).toBe(1);
+        expect(multichoice_qa.length).toBe(7);
         multichoice_qa.forEach((item) => {
           expect(item).toMatchObject({
             question_mc_id: expect.any(Number),
             continent: "asia",
-            sub_category_id: 3,
+            category_id: 1,
             level: "Intermediate",
             question_text: expect.any(String),
             answer_mc_id: expect.any(Number),
@@ -118,7 +118,7 @@ describe(" GET/ Multi-choice questions and answers", () => {
   test("400: responds with Bad Request when passed invalid level query", () => {
     return request(app)
       .get(
-        "/api/multichoice-qa?level=potato&&continent=asia&&sub_category_id=3"
+        "/api/multichoice-qa?level=potato&&continent=asia&&category_id=1"
       )
       .expect(400)
       .then(({ body }) => {
@@ -128,7 +128,7 @@ describe(" GET/ Multi-choice questions and answers", () => {
   test("400: responds with Bad Request when passed invalid continent query", () => {
     return request(app)
       .get(
-        "/api/multichoice-qa?level=Beginner&&continent=potato&&sub_category_id=3"
+        "/api/multichoice-qa?level=Beginner&&continent=potato&&category_id=1"
       )
       .expect(400)
       .then(({ body }) => {

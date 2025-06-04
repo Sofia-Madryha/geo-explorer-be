@@ -1,6 +1,6 @@
 const db = require("../db/connection");
 
-exports.selectMultiChoiceQA = (sub_category_id, continent, level) => {
+exports.selectMultiChoiceQA = (category_id, continent, level) => {
   let queryStr = `
     SELECT q.*, a.* 
     FROM questions_multiple_choices q
@@ -14,9 +14,9 @@ exports.selectMultiChoiceQA = (sub_category_id, continent, level) => {
   const levelsGreenList = ['Beginner', 'Intermediate', 'Advanced']
   const continentsGreenList = ['asia', 'north america', 'south america', 'europe', 'africa', 'oceania', 'world']
   
-  if (sub_category_id) {
-    conditions.push("q.sub_category_id = $" + (queryVals.length + 1));
-    queryVals.push(sub_category_id);
+  if (category_id) {
+    conditions.push("q.category_id = $" + (queryVals.length + 1));
+    queryVals.push(category_id);
   }
   
   if (continent) {
