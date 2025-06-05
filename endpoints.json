@@ -6,6 +6,15 @@
     "description": "return an array of categories objects",
     "exampleResponse": {}
   },
+  "GET /api/subcategories": {
+    "description": "return an array of subcategories objects",
+    "exampleResponse": {
+      "sub_category_id": 1,
+      "category_id": 1,
+      "sub_category_name": "mountain",
+      "img_url": "https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnRhaW5zfGVufDB8fDB8fHww"
+    }
+  },
   "GET /api/learning-cards": {
     "description": "Returns learning cards filtered by sub_category_id and continent with pagination support - GET /api/learning-cards?sub_category_id=4&continent=asia(&page=2)",
     "exampleResponse": [
@@ -127,5 +136,20 @@
         }
       ]
     }
+  },
+  "GET /api/multichoice-qa?level=Beginner&&continent=asia&&category_id=1": {
+    "description": "return an array of all multichoice-qa",
+    "exampleResponse": [
+      {
+        "question_mc_id": 1,
+        "continent": "asia",
+        "sub_category_id": 1,
+        "level": "Beginner",
+        "question_text": "Which mountain is the highest peak in Asia?",
+        "answer_mc_id": 1,
+        "multiple_choice_text": "Mount Fuji,Altai Mountains,Ural Mountains,Mount Everest",
+        "correct_answer": "Mount Everest"
+      }
+    ]
   }
 }

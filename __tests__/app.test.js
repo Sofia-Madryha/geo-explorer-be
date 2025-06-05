@@ -51,26 +51,26 @@ describe(" GET/ Sub-Categories", () => {
 });
 
 describe(" GET/ Multi-choice questions and answers", () => {
-  // test("200-responds with an array of multi-choice questions and answers", () => {
-  //   return request(app)
-  //     .get("/api/multichoice-qa")
-  //     .expect(200)
-  //     .then(({ body: { multichoice_qa } }) => {
-  //       expect(multichoice_qa.length).toBe(23);
-  //       multichoice_qa.forEach((item) => {
-  //         expect(item).toMatchObject({
-  //           question_mc_id: expect.any(Number),
-  //           continent: expect.any(String),
-  //           sub_category_id: expect.any(Number),
-  //           level: expect.any(String),
-  //           question_text: expect.any(String),
-  //           answer_mc_id: expect.any(Number),
-  //           multiple_choice_text: expect.any(String),
-  //           correct_answer: expect.any(String),
-  //         });
-  //       });
-  //     });
-  // });
+  test("200-responds with an array of multi-choice questions and answers", () => {
+    return request(app)
+      .get("/api/multichoice-qa")
+      .expect(200)
+      .then(({ body: { multichoice_qa } }) => {
+        expect(multichoice_qa.length).toBe(23);
+        multichoice_qa.forEach((item) => {
+          expect(item).toMatchObject({
+            question_mc_id: expect.any(Number),
+            continent: expect.any(String),
+            sub_category_id: expect.any(Number),
+            level: expect.any(String),
+            question_text: expect.any(String),
+            answer_mc_id: expect.any(Number),
+            multiple_choice_text: expect.any(String),
+            correct_answer: expect.any(String),
+          });
+        });
+      });
+  });
   test("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
       .get("/api/multichoice-qa?level=Beginner&&continent=asia&&category_id=1")

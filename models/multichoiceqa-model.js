@@ -7,39 +7,49 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
     LEFT JOIN answers_multiple_choices a 
     ON q.question_mc_id = a.question_mc_id
   `;
-  
+
   const queryVals = [];
   const conditions = [];
 
-  const levelsGreenList = ['Beginner', 'Intermediate', 'Advanced']
-  const continentsGreenList = ['asia', 'north america', 'south america', 'europe', 'africa', 'oceania', 'world']
-  
+  const levelsGreenList = ["Beginner", "Intermediate", "Advanced", undefined];
+  const continentsGreenList = [
+    "asia",
+    "north america",
+    "south america",
+    "europe",
+    "africa",
+    "oceania",
+    "world",
+    undefined,
+  ];
+
   if (category_id) {
     conditions.push("q.category_id = $" + (queryVals.length + 1));
     queryVals.push(category_id);
   }
-  
+
   if (continent) {
     conditions.push("q.continent = $" + (queryVals.length + 1));
     queryVals.push(continent.toLowerCase());
   }
-  
+
   if (level) {
     conditions.push("q.level = $" + (queryVals.length + 1));
     queryVals.push(level);
   }
-  
+
   if (conditions.length > 0) {
     queryStr += " WHERE " + conditions.join(" AND ");
   }
 
-  if (!levelsGreenList.includes(level) || !continentsGreenList.includes(continent)) {
-        return Promise.reject({status: 400, msg: "Bad Request"});
-    }
-  
-  return db
-    .query(queryStr, queryVals)
-    .then((result) => {
-      return result.rows;
-    });
+  if (
+    !levelsGreenList.includes(level) ||
+    !continentsGreenList.includes(continent)
+  ) {
+    return Promise.reject({ status: 400, msg: "Bad Request" });
+  }
+
+  return db.query(queryStr, queryVals).then((result) => {
+    return result.rows;
+  });
 };
