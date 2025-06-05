@@ -1,17 +1,26 @@
-const { selectLearningCards } = require("../models/learningCards-model");
+const {
+  selectLearningCardsByFilters,
+} = require("../models/learningCards-model");
 
 exports.getLearningCards = (req, res, next) => {
-  const { sub_category_id } = req.params;
+  const { sub_category_id, continent, page } = req.query;
 
-  if (!/^\d+$/.test(sub_category_id)) {
-    return res.status(400).json({ msg: "400 Bad Request" });
-  }
-  selectLearningCards(sub_category_id)
-    .then((learningCards) => {
-      if (learningCards.length === 0) {
+  const pageNum = page ? parseInt(page, 5) : 1;
+  const limit = 5;
+  const offset = (pageNum - 1) * limit;
+
+  selectLearningCardsByFilters(sub_category_id, continent, offset, limit)
+    .then((cards) => {
+      if (cards.length === 0) {
         return res.status(404).json({ msg: "404 Not Found" });
       }
-      res.status(200).json({ learningCards });
+      res.status(200).json({ learningCards: cards });
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.status && err.msg) {
+        res.status(err.status).json({ msg: err.msg });
+      } else {
+        next(err);
+      }
+    });
 };
