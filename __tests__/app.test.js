@@ -144,14 +144,14 @@ describe("2. 404: Not Found - BAD url-error", () => {
   });
 });
 
-describe("3. GET /api/learning-cards/sub-category/:sub_category_id", () => {
-  test("3a. 200: return learning cards array with valid sub_category_id", () => {
+describe("3. GET /api/learning-cards/", () => {
+  test("3a. 200: return learning cards array with valid sub_category_id & continent on page 2", () => {
     return request(app)
-      .get("/api/learning-cards/sub-categories/4")
+      .get("/api/learning-cards?sub_category_id=4&continent=asia&page=2")
       .expect(200)
       .then((res) => {
         expect(Array.isArray(res.body.learningCards)).toBe(true);
-        expect(res.body.learningCards.length).toBe(8);
+        expect(res.body.learningCards.length).toBe(3);
 
         expect(res.body.learningCards[0]).toMatchObject({
           card_id: expect.any(Number),
@@ -165,10 +165,18 @@ describe("3. GET /api/learning-cards/sub-category/:sub_category_id", () => {
   });
   test("3b. 404: return 404 Not Found if valid format but not avaliable", () => {
     return request(app)
-      .get("/api/learning-cards/sub-categories/54321")
+      .get("/api/learning-cards?sub_category_id=999")
       .expect(404)
       .then((res) => {
         expect(res.body.msg).toBe("404 Not Found");
+      });
+  });
+  test("3c. 400: returns 400 Bad Request for invalid continent", () => {
+    return request(app)
+      .get("/api/learning-cards?continent=middleofnowhere")
+      .expect(400)
+      .then((res) => {
+        expect(res.body.msg).toBe("400 Bad Request");
       });
   });
 });
