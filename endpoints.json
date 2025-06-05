@@ -6,19 +6,16 @@
     "description": "return an array of categories objects",
     "exampleResponse": {}
   },
-  "GET /api/learning-cards/sub-category/:sub_category_id": {
-    "description": "Returns learning cards for a specific sub-category",
-    "parameters": {
-      "sub_category_id": "The ID of the sub-category"
-    },
+  "GET /api/learning-cards": {
+    "description": "Returns learning cards filtered by sub_category_id and continent with pagination support - GET /api/learning-cards?sub_category_id=4&continent=asia(&page=2)",
     "exampleResponse": [
       {
         "card_id": 1,
-        "continent": "Asia",
+        "continent": "asia",
         "sub_category_id": 4,
-        "title": "Himalayas — Nepal",
-        "description": "The Himalayas are the highest mountain range...",
-        "img_url": "https://example.com/himalayas.jpg"
+        "title": "Europe Sea",
+        "description": "The Himalayas are the highest mountain range spanning Nepal...",
+        "img_url": "https://example.com/europe-sea.jpg"
       }
     ]
   },
