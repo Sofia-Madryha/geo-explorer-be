@@ -216,8 +216,8 @@ describe(" POST /api/users", () => {
         expect(user).toMatchObject({
           user_id: expect.any(Number),
           username: "new-user",
-          level_nature: "beginner",
-          level_territory: "beginner",
+          level_nature: "Beginner",
+          level_territory: "Beginner",
           rating: 0,
           avatar_url: "https://avatar.iran.liara.run/public/23",
         });
@@ -319,8 +319,8 @@ describe(" GET /api/users/:username", () => {
         expect(user).toMatchObject({
           user_id: 2,
           username: "susanzzzz",
-          level_nature: "intermediate",
-          level_territory: "intermediate",
+          level_nature: "Intermediate",
+          level_territory: "Intermediate",
           rating: 60,
           avatar_url: "https://avatar.iran.liara.run/public/77",
         });
@@ -339,7 +339,7 @@ describe(" GET /api/users/:username", () => {
 
 describe(" PATCH /api/users/:username", () => {
   test("1 200: Respond with an updated user object with updated level_nature", () => {
-    const patchObj = { level_nature: "intermediate" };
+    const patchObj = { level_nature: "Intermediate" };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -349,8 +349,8 @@ describe(" PATCH /api/users/:username", () => {
         expect(user).toMatchObject({
           user_id: 4,
           username: "mike_w",
-          level_nature: "intermediate",
-          level_territory: "intermediate",
+          level_nature: "Intermediate",
+          level_territory: "Intermediate",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
         });
@@ -368,7 +368,7 @@ describe(" PATCH /api/users/:username", () => {
         expect(user).toMatchObject({
           user_id: 4,
           username: "mike_w",
-          level_nature: "beginner",
+          level_nature: "Beginner",
           level_territory: "advance",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
@@ -387,8 +387,8 @@ describe(" PATCH /api/users/:username", () => {
         expect(user).toMatchObject({
           user_id: 4,
           username: "mike_w",
-          level_nature: "beginner",
-          level_territory: "intermediate",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
           rating: 100,
           avatar_url: "https://avatar.iran.liara.run/public/12",
         });
@@ -406,8 +406,8 @@ describe(" PATCH /api/users/:username", () => {
         expect(user).toMatchObject({
           user_id: 4,
           username: "mike_w",
-          level_nature: "beginner",
-          level_territory: "intermediate",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
           rating: 15,
           avatar_url: "newUrl",
         });
@@ -415,7 +415,7 @@ describe(" PATCH /api/users/:username", () => {
   });
 
   test("5 200: Respond with an updated user object with updated level_nature and rating", () => {
-    const patchObj = { level_nature: "intermediate", rating: 50 };
+    const patchObj = { level_nature: "Intermediate", rating: 50 };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -425,8 +425,8 @@ describe(" PATCH /api/users/:username", () => {
         expect(user).toMatchObject({
           user_id: 4,
           username: "mike_w",
-          level_nature: "intermediate",
-          level_territory: "intermediate",
+          level_nature: "Intermediate",
+          level_territory: "Intermediate",
           rating: 50,
           avatar_url: "https://avatar.iran.liara.run/public/12",
         });
@@ -434,7 +434,7 @@ describe(" PATCH /api/users/:username", () => {
   });
 
   test("6 404: Respond with username Not Found! msg when trying to update user with username not in database", () => {
-    const patchObj = { level_nature: "intermediate", rating: 50 };
+    const patchObj = { level_nature: "Intermediate", rating: 50 };
 
     return request(app)
       .patch("/api/users/NotAUsername")

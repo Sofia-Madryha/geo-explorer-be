@@ -11,7 +11,7 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
   const queryVals = [];
   const conditions = [];
 
-  const levelsGreenList = ["Beginner", "Intermediate", "Advanced", undefined];
+  const levelsGreenList = ["Beginner", "Intermediate", "Advanced"];
   const continentsGreenList = [
     "asia",
     "north america",
@@ -20,7 +20,6 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
     "africa",
     "oceania",
     "world",
-    undefined,
   ];
 
   if (category_id) {
@@ -43,8 +42,8 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
   }
 
   if (
-    !levelsGreenList.includes(level) ||
-    !continentsGreenList.includes(continent)
+    (level && !levelsGreenList.includes(level)) ||
+    (continent && !continentsGreenList.includes(continent.toLowerCase()))
   ) {
     return Promise.reject({ status: 400, msg: "Bad Request" });
   }
