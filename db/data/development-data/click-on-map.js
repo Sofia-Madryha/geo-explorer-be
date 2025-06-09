@@ -1,7 +1,7 @@
 module.exports = [
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Mountains",
     "instruction": "Click on a country that contains part of the Himalayas on the map",
     "location": "Nepal, China, India, Bhutan, Pakistan"
@@ -50,28 +50,28 @@ module.exports = [
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click on a country through which the Ganges River flows",
     "location": "India"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country through which the Mekong River flows",
     "location": "China, Myanmar, Laos, Thailand, Cambodia, Vietnam"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country that borders the Caspian Sea",
     "location": "Russia, Kazakhstan, Turkmenistan, Iran, Azerbaijan"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Landscape",
     "instruction": "Click a country that contains part of the Gobi Desert",
     "location": "China, Mongolia"
@@ -120,35 +120,35 @@ module.exports = [
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on India on the map",
     "location": "India"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on Japan on the map",
     "location": "Japan"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on Kazakhstan on the map",
     "location": "Kazakhstan"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on Saudi Arabia on the map",
     "location": "Saudi Arabia"
   },
   {
     "continent": "asia",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on Uzbekistan on the map",
     "location": "Uzbekistan"
@@ -232,7 +232,7 @@ module.exports = [
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Mountains",
     "instruction": "Click a country that contains part of the Atlas Mountains",
     "location": "Morocco, Algeria, Tunisia"
@@ -267,14 +267,14 @@ module.exports = [
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country through which the Nile River flows",
     "location": "Egypt, Sudan, South Sudan, Ethiopia, Uganda"
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginer",
     "category": "Water Bodies",
     "instruction": "Click a country that borders Lake Victoria",
     "location": "Uganda, Kenya, Tanzania"
@@ -309,7 +309,7 @@ module.exports = [
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Landscape",
     "instruction": "Click a country that contains part of the Sahara Desert",
     "location": "Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, Sudan, Tunisia"
@@ -337,21 +337,21 @@ module.exports = [
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on Nigeria",
     "location": "Nigeria"
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital of Cairo",
     "location": "Egypt"
   },
   {
     "continent": "africa",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on South Africa",
     "location": "South Africa"
@@ -400,7 +400,7 @@ module.exports = [
   },
     {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Mountains",
     "instruction": "Click a country that contains part of the Alps",
     "location": "France, Italy, Switzerland, Austria, Germany, Slovenia, Liechtenstein"
@@ -435,14 +435,14 @@ module.exports = [
   },
   {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country that borders the Mediterranean Sea",
     "location": "Spain, France, Monaco, Italy, Slovenia, Croatia, Bosnia and Herzegovina, Montenegro, Albania, Greece"
   },
   {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country that borders the North Sea",
     "location": "United Kingdom, Norway, Denmark, Germany, Netherlands, Belgium, France"
@@ -477,7 +477,7 @@ module.exports = [
   },
   {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Landscape",
     "instruction": "Click a country that contains part of the Great European Plain",
     "location": "Germany, Poland, Netherlands, Belgium, Denmark, Belarus, Ukraine"
@@ -505,21 +505,21 @@ module.exports = [
   },
   {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click on Germany",
     "location": "Germany"
   },
   {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital of Paris",
     "location": "France"
   },
   {
     "continent": "europe",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital of Rome",
     "location": "Italy"
@@ -568,7 +568,7 @@ module.exports = [
   },
     {
     "continent": "oceania",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Mountains",
     "instruction": "Click the country that contains the Southern Alps",
     "location": "New Zealand"
@@ -589,7 +589,7 @@ module.exports = [
   },
   {
     "continent": "oceania",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country made up entirely of islands in the Pacific Ocean",
     "location": "Fiji, Tonga, Samoa, Solomon Islands, Vanuatu, Kiribati, Tuvalu, Palau, Micronesia, Marshall Islands, Nauru"
@@ -617,7 +617,7 @@ module.exports = [
   },
   {
     "continent": "oceania",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Landscape",
     "instruction": "Click a country that contains the world's largest coral reef system",
     "location": "Australia"
@@ -645,7 +645,7 @@ module.exports = [
   },
   {
     "continent": "oceania",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital city of Suva",
     "location": "Fiji"
@@ -687,7 +687,7 @@ module.exports = [
   },
     {
     "continent": "north america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Mountains",
     "instruction": "Click a country that contains part of the Rocky Mountains",
     "location": "United States, Canada"
@@ -708,14 +708,14 @@ module.exports = [
   },
   {
     "continent": "north america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country that borders the Gulf of Mexico",
     "location": "United States, Mexico, Cuba"
   },
   {
     "continent": "north america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country that borders the Caribbean Sea",
     "location": "Belize, Guatemala, Honduras, Nicaragua, Costa Rica, Panama, Cuba, Jamaica, Haiti, Dominican Republic"
@@ -750,7 +750,7 @@ module.exports = [
   },
   {
     "continent": "north america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Landscape",
     "instruction": "Click a country that includes tropical rainforests in Central America",
     "location": "Guatemala, Belize, Honduras, Nicaragua, Costa Rica, Panama"
@@ -778,14 +778,14 @@ module.exports = [
   },
   {
     "continent": "north america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital city of Ottawa",
     "location": "Canada"
   },
   {
     "continent": "north america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital city of Mexico City",
     "location": "Mexico"
@@ -827,7 +827,7 @@ module.exports = [
   },
     {
     "continent": "south america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Mountains",
     "instruction": "Click a country that contains part of the Andes Mountains",
     "location": "Argentina, Chile, Bolivia, Peru, Ecuador, Colombia, Venezuela"
@@ -848,14 +848,14 @@ module.exports = [
   },
   {
     "continent": "south america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country through which the Amazon River flows",
     "location": "Brazil, Peru, Colombia"
   },
   {
     "continent": "south america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Water Bodies",
     "instruction": "Click a country that borders the Atlantic Ocean in South America",
     "location": "Brazil, Uruguay, Argentina, Guyana, Suriname"
@@ -883,7 +883,7 @@ module.exports = [
   },
   {
     "continent": "south america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Landscape",
     "instruction": "Click a country that contains part of the Amazon Rainforest",
     "location": "Brazil, Peru, Colombia, Venezuela, Bolivia, Ecuador"
@@ -918,7 +918,7 @@ module.exports = [
   },
   {
     "continent": "south america",
-    "level": "Basic",
+    "level": "Beginner",
     "category": "Countries",
     "instruction": "Click the country with the capital city of Buenos Aires",
     "location": "Argentina"
