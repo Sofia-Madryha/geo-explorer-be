@@ -11,7 +11,7 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
   const queryVals = [];
   const conditions = [];
 
-  const levelsGreenList = ["Beginner", "Intermediate", "Advanced", undefined];
+  const levelsGreenList = ["Beginner", "Intermediate", "Advanced"];
   const continentsGreenList = [
     "asia",
     "north america",
