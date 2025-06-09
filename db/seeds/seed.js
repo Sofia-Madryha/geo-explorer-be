@@ -103,7 +103,7 @@ const seed = ({
         level_nature VARCHAR(20) DEFAULT 'beginner',
         level_territory VARCHAR(20) DEFAULT 'beginner',
         rating INT DEFAULT 0,
-        avatar_url VARCHAR(1000) NOT NULL)`);
+        avatar_url VARCHAR(1000) NOT NULL);`);
     })
     .then(() => {
       const formattedCategory = categoriesData.map((category) => {
@@ -116,7 +116,6 @@ const seed = ({
       return db.query(insertCategoriesQuery);
     })
     .then(() => {
-      
       const formattedSubCategory = subCategoriesData.map((sub_category) => {
         return [
           sub_category.sub_category_name,
@@ -247,9 +246,6 @@ const seed = ({
         formattedUsers
       );
       return db.query(insertUsersQuery);
-    })
-    .then(() => {
-      console.log("Seed completed!");
     })
     .catch((err) => {
       console.log("Seeding error:", err);
