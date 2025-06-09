@@ -1061,4 +1061,123 @@ describe("seed", () => {
         });
     });
   });
+
+  describe("data insertion", () => {
+    test("categories data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM categories;`)
+        .then(({ rows: categories }) => {
+          expect(categories).toHaveLength(2);
+          categories.forEach((category) => {
+            expect(category).toHaveProperty("category_id");
+            expect(category).toHaveProperty("category_name");
+            expect(category).toHaveProperty("img_url");
+          });
+        });
+    });
+
+    test("sub_categories data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM sub_categories;`)
+        .then(({ rows: sub_categories }) => {
+          expect(sub_categories).toHaveLength(4);
+          sub_categories.forEach((sub_category) => {
+            expect(sub_category).toHaveProperty("sub_category_id");
+            expect(sub_category).toHaveProperty("category_id");
+            expect(sub_category).toHaveProperty("sub_category_name");
+            expect(sub_category).toHaveProperty("img_url");
+          });
+        });
+    });
+
+    test("questions_matching_pairs data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM questions_matching_pairs;`)
+        .then(({ rows: questions_matching_pairs }) => {
+          expect(questions_matching_pairs).toHaveLength(10);
+          questions_matching_pairs.forEach((question) => {
+            expect(question).toHaveProperty("question_pairs_id");
+            expect(question).toHaveProperty("continent");
+            expect(question).toHaveProperty("category_id");
+            expect(question).toHaveProperty("sub_category_id");
+            expect(question).toHaveProperty("level");
+            expect(question).toHaveProperty("question_text");
+          });
+        });
+    });
+
+    test("answers_matching_pairs data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM answers_matching_pairs;`)
+        .then(({ rows: answers_matching_pairs }) => {
+          expect(answers_matching_pairs).toHaveLength(48);
+          answers_matching_pairs.forEach((answer) => {
+            expect(answer).toHaveProperty("answer_pairs_id");
+            expect(answer).toHaveProperty("question_pairs_id");
+            expect(answer).toHaveProperty("left_text");
+            expect(answer).toHaveProperty("right_text");
+          });
+        });
+    });
+
+    test("questions_multiple_choices data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM questions_multiple_choices;`)
+        .then(({ rows: questions_multiple_choices }) => {
+          expect(questions_multiple_choices).toHaveLength(23);
+          questions_multiple_choices.forEach((question) => {
+            expect(question).toHaveProperty("question_mc_id");
+            expect(question).toHaveProperty("continent");
+            expect(question).toHaveProperty("category_id");
+            expect(question).toHaveProperty("sub_category_id");
+            expect(question).toHaveProperty("level");
+            expect(question).toHaveProperty("question_text");
+          });
+        });
+    });
+
+    test("answers_multiple_choices data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM answers_multiple_choices;`)
+        .then(({ rows: answers_multiple_choices }) => {
+          expect(answers_multiple_choices).toHaveLength(23);
+          answers_multiple_choices.forEach((answer) => {
+            expect(answer).toHaveProperty("answer_mc_id");
+            expect(answer).toHaveProperty("question_mc_id");
+            expect(answer).toHaveProperty("multiple_choice_text");
+            expect(answer).toHaveProperty("correct_answer");
+          });
+        });
+    });
+
+    test("learning_cards data has been inserted correctly", () => {
+      return db
+        .query(`SELECT * FROM learning_cards;`)
+        .then(({ rows: learning_cards }) => {
+          expect(learning_cards).toHaveLength(38);
+          learning_cards.forEach((learning_card) => {
+            expect(learning_card).toHaveProperty("card_id");
+            expect(learning_card).toHaveProperty("continent");
+            expect(learning_card).toHaveProperty("sub_category_id");
+            expect(learning_card).toHaveProperty("title");
+            expect(learning_card).toHaveProperty("description");
+            expect(learning_card).toHaveProperty("img_url");
+          });
+        });
+    });
+
+    test("users data has been inserted correctly", () => {
+      return db.query(`SELECT * FROM users;`).then(({ rows: users }) => {
+        expect(users).toHaveLength(40);
+        users.forEach((user) => {
+          expect(user).toHaveProperty("user_id");
+          expect(user).toHaveProperty("username");
+          expect(user).toHaveProperty("level_nature");
+          expect(user).toHaveProperty("level_territory");
+          expect(user).toHaveProperty("rating");
+          expect(user).toHaveProperty("avatar_url");
+        });
+      });
+    });
+  });
 });
