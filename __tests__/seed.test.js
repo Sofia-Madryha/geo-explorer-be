@@ -980,7 +980,7 @@ describe("seed", () => {
         });
     });
 
-    test("level_nature column has default value as 'beginner'", () => {
+    test("level_nature column has default value as 'Beginner'", () => {
       return db
         .query(
           `SELECT column_default
@@ -989,7 +989,7 @@ describe("seed", () => {
         AND column_name = 'level_nature';`
         )
         .then(({ rows: [{ column_default }] }) => {
-          expect(column_default).toBe("'beginner'::character varying");
+          expect(column_default).toBe("'Beginner'::character varying");
         });
     });
 
@@ -1007,7 +1007,7 @@ describe("seed", () => {
         });
     });
 
-    test("level_territory column has default value as 'beginner'", () => {
+    test("level_territory column has default value as 'Beginner'", () => {
       return db
         .query(
           `SELECT column_default
@@ -1016,7 +1016,7 @@ describe("seed", () => {
         AND column_name = 'level_territory';`
         )
         .then(({ rows: [{ column_default }] }) => {
-          expect(column_default).toBe("'beginner'::character varying");
+          expect(column_default).toBe("'Beginner'::character varying");
         });
     });
 

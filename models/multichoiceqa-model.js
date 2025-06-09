@@ -20,7 +20,6 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
     "africa",
     "oceania",
     "world",
-    undefined,
   ];
 
   if (category_id) {
@@ -43,8 +42,8 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
   }
 
   if (
-    !levelsGreenList.includes(level) ||
-    !continentsGreenList.includes(continent)
+    (level && !levelsGreenList.includes(level)) ||
+    (continent && !continentsGreenList.includes(continent.toLowerCase()))
   ) {
     return Promise.reject({ status: 400, msg: "Bad Request" });
   }
