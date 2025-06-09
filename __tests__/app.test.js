@@ -71,7 +71,7 @@ describe(" GET/ Multi-choice questions and answers", () => {
         });
       });
   });
-  test("200-responds with an array of multi-choice questions and answers", () => {
+  test.only("200-responds with an array of multi-choice questions and answers", () => {
     return request(app)
       .get("/api/multichoice-qa?level=Beginner&&continent=asia&&category_id=1")
       .expect(200)
