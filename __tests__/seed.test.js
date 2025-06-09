@@ -1061,4 +1061,17 @@ describe("seed", () => {
         });
     });
   });
+
+  describe("data insertion", () => {
+    test("categories data has been inserted correctly", () => {
+    return db.query(`SELECT * FROM categories;`).then(({ rows: categories }) => {
+      expect(categories).toHaveLength(2);
+      categories.forEach((category) => {
+        expect(category).toHaveProperty("category_id");
+        expect(category).toHaveProperty("category_name");
+        expect(category).toHaveProperty("img_url");
+      });
+    });
+  });
+  })
 });
