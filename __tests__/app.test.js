@@ -195,6 +195,8 @@ describe(" GET /api/users", () => {
             level_territory: expect.any(String),
             rating: expect.any(Number),
             avatar_url: expect.any(String),
+            quizz: expect.any(Number),
+            correct_answers: expect.any(String),
           });
         });
       });

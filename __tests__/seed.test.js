@@ -1060,6 +1060,47 @@ describe("seed", () => {
           expect(column.character_maximum_length).toBe(1000);
         });
     });
+
+    test("users table has quizz column as integer", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type
+            FROM information_schema.columns
+            WHERE table_name = 'users'
+            AND column_name = 'quizz';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("quizz");
+          expect(column.data_type).toBe("integer");
+        });
+    });
+
+    test("quizz column has default value as 1", () => {
+      return db
+        .query(
+          `SELECT column_default
+        FROM information_schema.columns
+        WHERE table_name = 'users'
+        AND column_name = 'quizz';`
+        )
+        .then(({ rows: [{ column_default }] }) => {
+          expect(column_default).toBe("1");
+        });
+    });
+
+    test("users table has correct_answers column as text", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type
+            FROM information_schema.columns
+            WHERE table_name = 'users'
+            AND column_name = 'correct_answers';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("correct_answers");
+          expect(column.data_type).toBe("text");
+        });
+    });
   });
 
   describe("data insertion", () => {
@@ -1176,6 +1217,8 @@ describe("seed", () => {
           expect(user).toHaveProperty("level_territory");
           expect(user).toHaveProperty("rating");
           expect(user).toHaveProperty("avatar_url");
+          expect(user).toHaveProperty("quizz");
+          expect(user).toHaveProperty("correct_answers");
         });
       });
     });

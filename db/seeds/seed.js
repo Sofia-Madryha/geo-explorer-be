@@ -103,7 +103,9 @@ const seed = ({
         level_nature VARCHAR(20) DEFAULT 'Beginner',
         level_territory VARCHAR(20) DEFAULT 'Beginner',
         rating INT DEFAULT 0,
-        avatar_url VARCHAR(1000) NOT NULL);`);
+        avatar_url VARCHAR(1000) NOT NULL,
+        quizz INT DEFAULT 1,
+        correct_answers TEXT);`);
     })
     .then(() => {
       const formattedCategory = categoriesData.map((category) => {
@@ -239,10 +241,12 @@ const seed = ({
           user.level_territory,
           user.rating,
           user.avatar_url,
+          user.quizz,
+          user.correct_answers,
         ];
       });
       const insertUsersQuery = format(
-        `INSERT INTO users(username, level_nature, level_territory, rating, avatar_url) VALUES %L`,
+        `INSERT INTO users(username, level_nature, level_territory, rating, avatar_url, quizz, correct_answers ) VALUES %L`,
         formattedUsers
       );
       return db.query(insertUsersQuery);
