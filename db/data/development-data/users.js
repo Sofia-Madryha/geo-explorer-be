@@ -359,4 +359,4 @@ module.exports = [
     "avatar_url": "https://avatar.iran.liara.run/public/69",
     "quizz": 1
   }
-]
+];
