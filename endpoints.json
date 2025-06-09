@@ -34,16 +34,16 @@
       {
         "user_id": 1,
         "username": "john_s",
-        "level_nature": "beginner",
-        "level_territory": "beginner",
+        "level_nature": "Beginner",
+        "level_territory": "Beginner",
         "rating": 0,
         "avatar_url": "https://avatar.iran.liara.run/public/35"
       },
       {
         "user_id": 2,
         "username": "susanzzzz",
-        "level_nature": "intermediate",
-        "level_territory": "intermediate",
+        "level_nature": "Intermediate",
+        "level_territory": "Intermediate",
         "rating": 60,
         "avatar_url": "https://avatar.iran.liara.run/public/77"
       }
@@ -54,8 +54,8 @@
     "exampleResponse": {
       "user_id": 1,
       "username": "john_s",
-      "level_nature": "beginner",
-      "level_territory": "beginner",
+      "level_nature": "Beginner",
+      "level_territory": "Beginner",
       "rating": 0,
       "avatar_url": "https://avatar.iran.liara.run/public/35"
     }
@@ -65,8 +65,8 @@
     "exampleResponse": {
       "user_id": 2,
       "username": "susanzzzz",
-      "level_nature": "intermediate",
-      "level_territory": "intermediate",
+      "level_nature": "Intermediate",
+      "level_territory": "Intermediate",
       "rating": 60,
       "avatar_url": "https://avatar.iran.liara.run/public/77"
     }
@@ -77,8 +77,8 @@
     "exampleResponse": {
       "user_id": 4,
       "username": "mike_w",
-      "level_nature": "beginner",
-      "level_territory": "intermediate",
+      "level_nature": "Beginner",
+      "level_territory": "Intermediate",
       "rating": 15,
       "avatar_url": "https://avatar.iran.liara.run/public/12"
     }
