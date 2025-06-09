@@ -6,6 +6,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 0,
     avatar_url: "https://avatar.iran.liara.run/public/35",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 2,
@@ -14,6 +16,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 60,
     avatar_url: "https://avatar.iran.liara.run/public/77",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 3,
@@ -22,6 +26,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 90,
     avatar_url: "https://avatar.iran.liara.run/public/39",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 4,
@@ -30,6 +36,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 15,
     avatar_url: "https://avatar.iran.liara.run/public/12",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 5,
@@ -38,6 +46,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 50,
     avatar_url: "https://avatar.iran.liara.run/public/23",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 6,
@@ -46,6 +56,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 85,
     avatar_url: "https://avatar.iran.liara.run/public/44",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 7,
@@ -54,6 +66,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 10,
     avatar_url: "https://avatar.iran.liara.run/public/56",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 8,
@@ -62,6 +76,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 70,
     avatar_url: "https://avatar.iran.liara.run/public/65",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 9,
@@ -70,6 +86,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 95,
     avatar_url: "https://avatar.iran.liara.run/public/82",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 10,
@@ -78,6 +96,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 5,
     avatar_url: "https://avatar.iran.liara.run/public/98",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 11,
@@ -86,6 +106,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 75,
     avatar_url: "https://avatar.iran.liara.run/public/16",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 12,
@@ -94,6 +116,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 88,
     avatar_url: "https://avatar.iran.liara.run/public/34",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 13,
@@ -102,6 +126,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 20,
     avatar_url: "https://avatar.iran.liara.run/public/51",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 14,
@@ -110,6 +136,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 60,
     avatar_url: "https://avatar.iran.liara.run/public/41",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 15,
@@ -118,6 +146,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 92,
     avatar_url: "https://avatar.iran.liara.run/public/29",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 16,
@@ -126,6 +156,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 8,
     avatar_url: "https://avatar.iran.liara.run/public/22",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 17,
@@ -134,6 +166,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 55,
     avatar_url: "https://avatar.iran.liara.run/public/13",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 18,
@@ -142,6 +176,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 98,
     avatar_url: "https://avatar.iran.liara.run/public/74",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 19,
@@ -150,6 +186,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 18,
     avatar_url: "https://avatar.iran.liara.run/public/30",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 20,
@@ -158,6 +196,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 63,
     avatar_url: "https://avatar.iran.liara.run/public/28",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 21,
@@ -166,6 +206,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 89,
     avatar_url: "https://avatar.iran.liara.run/public/37",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 22,
@@ -174,6 +216,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 12,
     avatar_url: "https://avatar.iran.liara.run/public/45",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 23,
@@ -182,6 +226,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 72,
     avatar_url: "https://avatar.iran.liara.run/public/58",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 24,
@@ -190,6 +236,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 90,
     avatar_url: "https://avatar.iran.liara.run/public/60",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 25,
@@ -198,6 +246,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 7,
     avatar_url: "https://avatar.iran.liara.run/public/21",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 26,
@@ -206,6 +256,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 65,
     avatar_url: "https://avatar.iran.liara.run/public/54",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 27,
@@ -214,6 +266,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 94,
     avatar_url: "https://avatar.iran.liara.run/public/49",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 28,
@@ -222,6 +276,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 9,
     avatar_url: "https://avatar.iran.liara.run/public/53",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 29,
@@ -230,6 +286,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 58,
     avatar_url: "https://avatar.iran.liara.run/public/47",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 30,
@@ -238,6 +296,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 96,
     avatar_url: "https://avatar.iran.liara.run/public/66",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 31,
@@ -246,6 +306,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 14,
     avatar_url: "https://avatar.iran.liara.run/public/24",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 32,
@@ -254,6 +316,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 67,
     avatar_url: "https://avatar.iran.liara.run/public/38",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 33,
@@ -262,6 +326,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 91,
     avatar_url: "https://avatar.iran.liara.run/public/59",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 34,
@@ -270,6 +336,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 6,
     avatar_url: "https://avatar.iran.liara.run/public/40",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 35,
@@ -278,6 +346,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 70,
     avatar_url: "https://avatar.iran.liara.run/public/43",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 36,
@@ -286,6 +356,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 85,
     avatar_url: "https://avatar.iran.liara.run/public/61",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 37,
@@ -294,6 +366,8 @@ module.exports = [
     level_territory: "Beginner",
     rating: 11,
     avatar_url: "https://avatar.iran.liara.run/public/64",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 38,
@@ -302,6 +376,8 @@ module.exports = [
     level_territory: "Intermediate",
     rating: 62,
     avatar_url: "https://avatar.iran.liara.run/public/50",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 39,
@@ -310,6 +386,8 @@ module.exports = [
     level_territory: "Advanced",
     rating: 97,
     avatar_url: "https://avatar.iran.liara.run/public/67",
+    quizz: 1,
+    correct_answers: "",
   },
   {
     user_id: 40,
@@ -318,5 +396,7 @@ module.exports = [
     level_territory: "Beginner",
     rating: 13,
     avatar_url: "https://avatar.iran.liara.run/public/69",
+    quizz: 1,
+    correct_answers: "",
   },
 ];
