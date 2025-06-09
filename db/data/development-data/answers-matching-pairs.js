@@ -2452,5 +2452,654 @@ module.exports = [
     "question_pairs_id": 104,
     "left_text": "Tanzania",
     "right_text": "Swahili and English"
+  },
+  {
+    "answer_pairs_id": 409,
+    "question_pairs_id": 105,
+    "left_text": "Yangtze River",
+    "right_text": "China"
+  },
+  {
+    "answer_pairs_id": 500,
+    "question_pairs_id": 105,
+    "left_text": "Ganges River",
+    "right_text": "India and Bangladesh"
+  },
+  {
+    "answer_pairs_id": 501,
+    "question_pairs_id": 105,
+    "left_text": "Mekong River",
+    "right_text": "Vietnam and other SE asian countries"
+  },
+  {
+    "answer_pairs_id": 502,
+    "question_pairs_id": 105,
+    "left_text": "Amur River",
+    "right_text": "Russia and China"
+  },
+  {
+    "answer_pairs_id": 503,
+    "question_pairs_id": 106,
+    "left_text": "Black Forest",
+    "right_text": "Germany"
+  },
+  {
+    "answer_pairs_id": 504,
+    "question_pairs_id": 106,
+    "left_text": "Tiveden Forest",
+    "right_text": "Sweden"
+  },
+  {
+    "answer_pairs_id": 505,
+    "question_pairs_id": 106,
+    "left_text": "Dinaric Alps Forests",
+    "right_text": "Croatia, Slovenia"
+  },
+  {
+    "answer_pairs_id": 506,
+    "question_pairs_id": 107,
+    "left_text": "Aconcagua",
+    "right_text": "Argentina"
+  },
+  {
+    "answer_pairs_id": 507,
+    "question_pairs_id": 107,
+    "left_text": "Chimborazo",
+    "right_text": "Ecuador"
+  },
+  {
+    "answer_pairs_id": 508,
+    "question_pairs_id": 107,
+    "left_text": "Pico da Neblina",
+    "right_text": "Brazil"
+  },
+  {
+    "answer_pairs_id": 509,
+    "question_pairs_id": 107,
+    "left_text": "Pico Bolívar",
+    "right_text": "Venezuela"
+  },
+  {
+    "answer_pairs_id": 510,
+    "question_pairs_id": 108,
+    "left_text": "Popocatépetl",
+    "right_text": "Active Mexican volcano, \"El Popo"
+  },
+  {
+    "answer_pairs_id": 511,
+    "question_pairs_id": 108,
+    "left_text": "Iztaccíhuatl",
+    "right_text": "“Sleeping Woman” volcano,"
+  },
+  {
+    "answer_pairs_id": 512,
+    "question_pairs_id": 108,
+    "left_text": "Mount Foraker",
+    "right_text": "Second highest in Alaska Range"
+  },
+  {
+    "answer_pairs_id": 513,
+    "question_pairs_id": 108,
+    "left_text": "Mount Lucania",
+    "right_text": "First ascent included a glacier landing"
+  },
+  {
+    "answer_pairs_id": 514,
+    "question_pairs_id": 109,
+    "left_text": "Fiordland National Park",
+    "right_text": "New Zealand"
+  },
+  {
+    "answer_pairs_id": 515,
+    "question_pairs_id": 109,
+    "left_text": "Simpson Desert",
+    "right_text": "Australia"
+  },
+  {
+    "answer_pairs_id": 516,
+    "question_pairs_id": 109,
+    "left_text": "Sovi Rainforest",
+    "right_text": "Fiji"
+  },
+  {
+    "answer_pairs_id": 517,
+    "question_pairs_id": 110,
+    "left_text": "Nile Crocodile",
+    "right_text": "Nile river"
+  },
+  {
+    "answer_pairs_id": 518,
+    "question_pairs_id": 110,
+    "left_text": "Okapi",
+    "right_text": "Congo river"
+  },
+  {
+    "answer_pairs_id": 519,
+    "question_pairs_id": 110,
+    "left_text": "Pink dolphin",
+    "right_text": "Amazon river"
+  },
+  {
+    "answer_pairs_id": 520,
+    "question_pairs_id": 110,
+    "left_text": "Otter",
+    "right_text": "Danube"
+  },
+  {
+    "answer_pairs_id": 521,
+    "question_pairs_id": 111,
+    "left_text": "Pamir Mountains",
+    "right_text": "Roof of the World, glaciers, cultural crossroads"
+  },
+  {
+    "answer_pairs_id": 522,
+    "question_pairs_id": 111,
+    "left_text": "Altai Mountains",
+    "right_text": "Rugged terrain, nomadic culture, snow leopards"
+  },
+  {
+    "answer_pairs_id": 523,
+    "question_pairs_id": 111,
+    "left_text": "Zagros Mountains",
+    "right_text": "Ancient civilizations, climate influence, resource rich"
+  },
+  {
+    "answer_pairs_id": 524,
+    "question_pairs_id": 111,
+    "left_text": "Himalayas",
+    "right_text": "Young tectonic range, tallest peaks, vital rivers"
+  },
+  {
+    "answer_pairs_id": 525,
+    "question_pairs_id": 112,
+    "left_text": "Negro River",
+    "right_text": "Largest blackwater river in the world"
+  },
+  {
+    "answer_pairs_id": 526,
+    "question_pairs_id": 112,
+    "left_text": "Paraná River",
+    "right_text": "Contains the Itaipu dam"
+  },
+  {
+    "answer_pairs_id": 527,
+    "question_pairs_id": 112,
+    "left_text": "Madeira River",
+    "right_text": "Major tributary of the Amazon"
+  },
+  {
+    "answer_pairs_id": 528,
+    "question_pairs_id": 112,
+    "left_text": "Uruguay River",
+    "right_text": "Forms borders between Brazil, Argentina, and Uruguay"
+  },
+  {
+    "answer_pairs_id": 529,
+    "question_pairs_id": 113,
+    "left_text": "Simpson Desert",
+    "right_text": "Red sand dunes"
+  },
+  {
+    "answer_pairs_id": 530,
+    "question_pairs_id": 113,
+    "left_text": "Daintree Rainforest",
+    "right_text": "One of oldest tropical forests"
+  },
+  {
+    "answer_pairs_id": 531,
+    "question_pairs_id": 113,
+    "left_text": "Sovi Rainforest",
+    "right_text": "Fiji's most important land ecosystem"
+  },
+  {
+    "answer_pairs_id": 532,
+    "question_pairs_id": 114,
+    "left_text": "Nigeria",
+    "right_text": "https://flagpedia.net/data/flags/w1600/ng.png"
+  },
+  {
+    "answer_pairs_id": 533,
+    "question_pairs_id": 114,
+    "left_text": "Ethiopia",
+    "right_text": "https://flagpedia.net/data/flags/w1600/et.png"
+  },
+  {
+    "answer_pairs_id": 534,
+    "question_pairs_id": 114,
+    "left_text": "South Africa",
+    "right_text": "https://flagpedia.net/data/flags/w1600/za.png"
+  },
+  {
+    "answer_pairs_id": 535,
+    "question_pairs_id": 114,
+    "left_text": "Morocco",
+    "right_text": "https://flagpedia.net/data/flags/w1600/ma.png"
+  },
+  {
+    "answer_pairs_id": 536,
+    "question_pairs_id": 115,
+    "left_text": "China",
+    "right_text": "https://flagpedia.net/china"
+  },
+  {
+    "answer_pairs_id": 537,
+    "question_pairs_id": 115,
+    "left_text": "India",
+    "right_text": "https://flagpedia.net/india"
+  },
+  {
+    "answer_pairs_id": 538,
+    "question_pairs_id": 115,
+    "left_text": "Japan",
+    "right_text": "https://flagpedia.net/japan"
+  },
+  {
+    "answer_pairs_id": 539,
+    "question_pairs_id": 115,
+    "left_text": "Saudi Arabia",
+    "right_text": "https://flagpedia.net/saudi-arabia"
+  },
+  {
+    "answer_pairs_id": 540,
+    "question_pairs_id": 116,
+    "left_text": "United States",
+    "right_text": "https://flagcdn.com/w320/us.png"
+  },
+  {
+    "answer_pairs_id": 541,
+    "question_pairs_id": 116,
+    "left_text": "Mexico",
+    "right_text": "https://flagcdn.com/w320/mx.png"
+  },
+  {
+    "answer_pairs_id": 542,
+    "question_pairs_id": 116,
+    "left_text": "Canada",
+    "right_text": "https://flagcdn.com/w320/ca.png"
+  },
+  {
+    "answer_pairs_id": 543,
+    "question_pairs_id": 116,
+    "left_text": "Cuba",
+    "right_text": "https://flagcdn.com/w320/cu.png"
+  },
+  {
+    "answer_pairs_id": 544,
+    "question_pairs_id": 117,
+    "left_text": "Argentina",
+    "right_text": "Buenos Aires"
+  },
+  {
+    "answer_pairs_id": 545,
+    "question_pairs_id": 117,
+    "left_text": "Venezuela",
+    "right_text": "Caracas"
+  },
+  {
+    "answer_pairs_id": 546,
+    "question_pairs_id": 117,
+    "left_text": "Peru",
+    "right_text": "Lima"
+  },
+  {
+    "answer_pairs_id": 547,
+    "question_pairs_id": 117,
+    "left_text": "Chile",
+    "right_text": "Santiago"
+  },
+  {
+    "answer_pairs_id": 548,
+    "question_pairs_id": 118,
+    "left_text": "New Zealand",
+    "right_text": "Māori and English"
+  },
+  {
+    "answer_pairs_id": 549,
+    "question_pairs_id": 118,
+    "left_text": "Palau",
+    "right_text": "Palauan and English"
+  },
+  {
+    "answer_pairs_id": 550,
+    "question_pairs_id": 118,
+    "left_text": "Vanuatu",
+    "right_text": "Bislama"
+  },
+  {
+    "answer_pairs_id": 551,
+    "question_pairs_id": 119,
+    "left_text": "Kenya",
+    "right_text": "https://flagpedia.net/data/flags/w1600/ke.png"
+  },
+  {
+    "answer_pairs_id": 552,
+    "question_pairs_id": 119,
+    "left_text": "Ghana",
+    "right_text": "https://flagpedia.net/data/flags/w1600/gh.png"
+  },
+  {
+    "answer_pairs_id": 553,
+    "question_pairs_id": 119,
+    "left_text": "Botswana",
+    "right_text": "https://flagpedia.net/data/flags/w1600/bw.png"
+  },
+  {
+    "answer_pairs_id": 554,
+    "question_pairs_id": 119,
+    "left_text": "Senegal",
+    "right_text": "https://flagpedia.net/data/flags/w1600/sn.png"
+  },
+  {
+    "answer_pairs_id": 555,
+    "question_pairs_id": 120,
+    "left_text": "Ethiopia",
+    "right_text": "Amharic"
+  },
+  {
+    "answer_pairs_id": 556,
+    "question_pairs_id": 120,
+    "left_text": "Ghana",
+    "right_text": "English"
+  },
+  {
+    "answer_pairs_id": 557,
+    "question_pairs_id": 120,
+    "left_text": "Morocco",
+    "right_text": "Arabic and Amazigh"
+  },
+  {
+    "answer_pairs_id": 558,
+    "question_pairs_id": 120,
+    "left_text": "Tanzania",
+    "right_text": "Swahili and English"
+  },
+  {
+    "answer_pairs_id": 559,
+    "question_pairs_id": 121,
+    "left_text": "China",
+    "right_text": "Over 1.4 billion"
+  },
+  {
+    "answer_pairs_id": 560,
+    "question_pairs_id": 121,
+    "left_text": "India",
+    "right_text": "Over 1.3 billion"
+  },
+  {
+    "answer_pairs_id": 561,
+    "question_pairs_id": 121,
+    "left_text": "Russia",
+    "right_text": "About 146 million"
+  },
+  {
+    "answer_pairs_id": 562,
+    "question_pairs_id": 121,
+    "left_text": "Saudi Arabia",
+    "right_text": "Around 35 million"
+  },
+  {
+    "answer_pairs_id": 563,
+    "question_pairs_id": 122,
+    "left_text": "The Bahamas",
+    "right_text": "Nassau"
+  },
+  {
+    "answer_pairs_id": 564,
+    "question_pairs_id": 122,
+    "left_text": "Barbados",
+    "right_text": "Bridgetown"
+  },
+  {
+    "answer_pairs_id": 565,
+    "question_pairs_id": 122,
+    "left_text": "Saint Lucia",
+    "right_text": "Castries"
+  },
+  {
+    "answer_pairs_id": 566,
+    "question_pairs_id": 122,
+    "left_text": "Jamaica",
+    "right_text": "Kingston"
+  },
+  {
+    "answer_pairs_id": 567,
+    "question_pairs_id": 123,
+    "left_text": "Black Forest",
+    "right_text": "Source of the Danube River and known for evergreen forests"
+  },
+  {
+    "answer_pairs_id": 568,
+    "question_pairs_id": 123,
+    "left_text": "Tiveden Forest",
+    "right_text": "Mystical forest with lynxes and ancient woodlands"
+  },
+  {
+    "answer_pairs_id": 569,
+    "question_pairs_id": 123,
+    "left_text": "Dinaric Alps Forests",
+    "right_text": "Forests with endemic species and karst terrai"
+  },
+  {
+    "answer_pairs_id": 570,
+    "question_pairs_id": 123,
+    "left_text": "Ecrins National Park Forests",
+    "right_text": "Alpine forests recognized by the Council of Europe"
+  },
+  {
+    "answer_pairs_id": 571,
+    "question_pairs_id": 124,
+    "left_text": "Triglav National Park",
+    "right_text": "Slovenia"
+  },
+  {
+    "answer_pairs_id": 572,
+    "question_pairs_id": 124,
+    "left_text": "Saxon Switzerland National Park",
+    "right_text": "Located near Dresden, Germany"
+  },
+  {
+    "answer_pairs_id": 573,
+    "question_pairs_id": 124,
+    "left_text": "Ecrins National Park Forests",
+    "right_text": "France"
+  },
+  {
+    "answer_pairs_id": 574,
+    "question_pairs_id": 124,
+    "left_text": "Tiveden National Park",
+    "right_text": "Sweden"
+  },
+  {
+    "answer_pairs_id": 575,
+    "question_pairs_id": 125,
+    "left_text": "Dolomites",
+    "right_text": "Belluno, South Tyrol, and Trentino"
+  },
+  {
+    "answer_pairs_id": 576,
+    "question_pairs_id": 125,
+    "left_text": "Dinaric Alps Forests",
+    "right_text": "Slovenia"
+  },
+  {
+    "answer_pairs_id": 577,
+    "question_pairs_id": 125,
+    "left_text": "Black Forest",
+    "right_text": "Southwestern Germany"
+  },
+  {
+    "answer_pairs_id": 578,
+    "question_pairs_id": 125,
+    "left_text": "Pyrenees",
+    "right_text": "France, Spain and Andorra"
+  },
+  {
+    "answer_pairs_id": 579,
+    "question_pairs_id": 126,
+    "left_text": "Danube",
+    "right_text": "Flows through Paris and into the English Channel"
+  },
+  {
+    "answer_pairs_id": 580,
+    "question_pairs_id": 126,
+    "left_text": "Volga",
+    "right_text": "Longest river in Europe"
+  },
+  {
+    "answer_pairs_id": 581,
+    "question_pairs_id": 126,
+    "left_text": "Rhine",
+    "right_text": "Flows from Germany’s Black Forest to the Black Sea"
+  },
+  {
+    "answer_pairs_id": 582,
+    "question_pairs_id": 126,
+    "left_text": "Seine",
+    "right_text": "Flows from the Swiss Alps to the North Sea"
+  },
+  {
+    "answer_pairs_id": 583,
+    "question_pairs_id": 127,
+    "left_text": "Norway",
+    "right_text": "Which country has the capital Oslo?"
+  },
+  {
+    "answer_pairs_id": 584,
+    "question_pairs_id": 127,
+    "left_text": "Ukrainian",
+    "right_text": "What is the official language of Ukraine?"
+  },
+  {
+    "answer_pairs_id": 585,
+    "question_pairs_id": 127,
+    "left_text": "Portugal",
+    "right_text": "Where is Coimbra?"
+  },
+  {
+    "answer_pairs_id": 586,
+    "question_pairs_id": 127,
+    "left_text": "Croatia",
+    "right_text": "Which country has the capital Zagreb?"
+  },
+  {
+    "answer_pairs_id": 587,
+    "question_pairs_id": 128,
+    "left_text": "Oslo",
+    "right_text": "Norway"
+  },
+  {
+    "answer_pairs_id": 588,
+    "question_pairs_id": 128,
+    "left_text": "Berlin",
+    "right_text": "Germany"
+  },
+  {
+    "answer_pairs_id": 589,
+    "question_pairs_id": 128,
+    "left_text": "Rome",
+    "right_text": "Italy"
+  },
+  {
+    "answer_pairs_id": 590,
+    "question_pairs_id": 128,
+    "left_text": "Croatia",
+    "right_text": "Zagreb"
+  },
+  {
+    "answer_pairs_id": 591,
+    "question_pairs_id": 129,
+    "left_text": "Austria",
+    "right_text": "https://flagpedia.net/data/flags/h80/at.png"
+  },
+  {
+    "answer_pairs_id": 592,
+    "question_pairs_id": 129,
+    "left_text": "Belgium",
+    "right_text": "https://flagpedia.net/data/flags/h80/be.png"
+  },
+  {
+    "answer_pairs_id": 593,
+    "question_pairs_id": 129,
+    "left_text": "Czech Republic",
+    "right_text": "https://flagpedia.net/data/flags/h80/cz.png"
+  },
+  {
+    "answer_pairs_id": 594,
+    "question_pairs_id": 129,
+    "left_text": "Denmark",
+    "right_text": "https://flagpedia.net/data/flags/h80/dk.png"
+  },
+  {
+    "answer_pairs_id": 595,
+    "question_pairs_id": 130,
+    "left_text": "Finland",
+    "right_text": "https://flagpedia.net/data/flags/h80/fi.png"
+  },
+  {
+    "answer_pairs_id": 596,
+    "question_pairs_id": 130,
+    "left_text": "Greece",
+    "right_text": "https://flagpedia.net/data/flags/h80/gr.png"
+  },
+  {
+    "answer_pairs_id": 597,
+    "question_pairs_id": 130,
+    "left_text": "Iceland",
+    "right_text": "https://flagpedia.net/data/flags/h80/is.png"
+  },
+  {
+    "answer_pairs_id": 598,
+    "question_pairs_id": 130,
+    "left_text": "Italy",
+    "right_text": "https://flagpedia.net/data/flags/h80/it.png"
+  },
+  {
+    "answer_pairs_id": 600,
+    "question_pairs_id": 131,
+    "left_text": "Austria",
+    "right_text": "Vienna"
+  },
+  {
+    "answer_pairs_id": 601,
+    "question_pairs_id": 131,
+    "left_text": "Finland",
+    "right_text": "Helsinki"
+  },
+  {
+    "answer_pairs_id": 602,
+    "question_pairs_id": 131,
+    "left_text": "Croatia",
+    "right_text": "Zagreb"
+  },
+  {
+    "answer_pairs_id": 603,
+    "question_pairs_id": 131,
+    "left_text": "Algeria",
+    "right_text": "Tirana"
+  },
+  {
+    "answer_pairs_id": 604,
+    "question_pairs_id": 132,
+    "left_text": "Spain",
+    "right_text": "Madrid"
+  },
+  {
+    "answer_pairs_id": 605,
+    "question_pairs_id": 132,
+    "left_text": "Moldova",
+    "right_text": "Chisinau"
+  },
+  {
+    "answer_pairs_id": 606,
+    "question_pairs_id": 132,
+    "left_text": "Poland",
+    "right_text": "Warsaw"
+  },
+  {
+    "answer_pairs_id": 607,
+    "question_pairs_id": 132,
+    "left_text": "Slovenia",
+    "right_text": "Ljubljana"
   }
 ]
+  
