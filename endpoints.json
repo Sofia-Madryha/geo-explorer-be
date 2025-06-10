@@ -151,5 +151,20 @@
         "correct_answer": "Mount Everest"
       }
     ]
+  },
+  "GET /api/map": {
+    "description": "Get all map questions",
+    "exampleResponse": {
+      "mapQuestions": [
+        {
+          "map_id": 1,
+          "continent": "asia",
+          "level": "Beginner",
+          "category_id": 1,
+          "instruction": "Click on a country that contains part of the Himalayas on the map",
+          "location": "Nepal, China, India, Bhutan, Pakistan"
+        }
+      ]
+    }
   }
 }
