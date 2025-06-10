@@ -6,6 +6,7 @@ const {
   subCategoriesRouter,
   multiChoiceQARouter,
   matchingPairsRouter,
+  mapRouter,
 } = require("./index-router");
 
 const apiRouter = require("express").Router();
@@ -18,5 +19,6 @@ apiRouter.use("/learning-cards", learningCardsRouter);
 apiRouter.use("/subcategories", subCategoriesRouter);
 apiRouter.use("/multichoice-qa", multiChoiceQARouter);
 apiRouter.use("/matching-pairs", matchingPairsRouter);
+apiRouter.use("/map", mapRouter);
 
 module.exports = apiRouter;
