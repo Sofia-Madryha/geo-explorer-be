@@ -222,6 +222,8 @@ describe(" POST /api/users", () => {
           level_territory: "Beginner",
           rating: 0,
           avatar_url: "https://avatar.iran.liara.run/public/23",
+          quizz: 1,
+          correct_answers: null,
         });
       });
   });
@@ -325,6 +327,8 @@ describe(" GET /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 60,
           avatar_url: "https://avatar.iran.liara.run/public/77",
+          quizz: 1,
+          correct_answers: ""
         });
       });
   });
@@ -355,12 +359,14 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          quizz: 1,
+          correct_answers: ""
         });
       });
   });
 
   test("2 200: Respond with an updated user object with updated level_territory", () => {
-    const patchObj = { level_territory: "advance" };
+    const patchObj = { level_territory: "Advance" };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -371,9 +377,11 @@ describe(" PATCH /api/users/:username", () => {
           user_id: 4,
           username: "mike_w",
           level_nature: "Beginner",
-          level_territory: "advance",
+          level_territory: "Advance",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          quizz: 1,
+          correct_answers: ""
         });
       });
   });
@@ -393,6 +401,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 100,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          quizz: 1,
+          correct_answers: ""
         });
       });
   });
@@ -412,6 +422,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "newUrl",
+          quizz: 1,
+          correct_answers: ""
         });
       });
   });
@@ -431,6 +443,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 50,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          quizz: 1,
+          correct_answers: ""
         });
       });
   });
@@ -494,6 +508,85 @@ describe(" PATCH /api/users/:username", () => {
         expect(msg).toBe("Bad Request!");
       });
   });
+
+  test("11 200: Respond with an updated user object with updated quizz", () => {
+    const patchObj = { quizz: 3 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+          quizz: 3,
+          correct_answers: ""
+        });
+      });
+  });
+
+  test("12 200: Respond with an updated user object with updated correct_answers", () => {
+    const patchObj = { correct_answers: "[1, 2, 3]" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+          quizz: 1,
+          correct_answers: "[1, 2, 3]"
+        });
+      });
+  });
+
+  test("13 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { quizz: "3" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("14 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { correct_answers: 12 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("15 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
+    const patchObj = { correct_answers: " " };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
 });
 
 describe("5 Matching pairs - GET /api/matching-pairs", () => {
