@@ -28,8 +28,10 @@ exports.selectMultiChoiceQA = (category_id, continent, level) => {
   }
 
   if (continent) {
-    conditions.push("q.continent = $" + (queryVals.length + 1));
-    queryVals.push(continent.toLowerCase());
+    if (continent !== "world") {
+      conditions.push("q.continent = $" + (queryVals.length + 1));
+      queryVals.push(continent.toLowerCase());
+    }
   }
 
   if (level) {
