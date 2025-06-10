@@ -1835,9 +1835,9 @@ module.exports = [
     "card_id": 230,
     "continent": "oceania",
     "sub_category_id": 1,
-    "title": "Bungle Bungle Range",
-    "description": "Purnululu National Park",
-    "img_url": "A UNESCO World Heritage Site in Western Australia, known for its unique beehive-shaped sandstone domes. The range is a significant geological feature and holds deep cultural importance to the Gija and Kija Aboriginal people. It offers stunning landscapes for hiking and aerial tours."
+    "title": "Bungle Bungle Range, Purnululu National Park",
+    "description": "A UNESCO World Heritage Site in Western Australia, known for its unique beehive-shaped sandstone domes. The range is a significant geological feature and holds deep cultural importance to the Gija and Kija Aboriginal people. It offers stunning landscapes for hiking and aerial tours.",
+    "img_url": "https://nplimages.infradoxxs.com/cache/pcache2/01586910.jpg"
   },
   {
     "card_id": 231,
