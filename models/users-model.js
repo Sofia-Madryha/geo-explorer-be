@@ -34,7 +34,9 @@ exports.patchUserByUsername = (
   level_nature,
   level_territory,
   rating,
-  avatar_url
+  avatar_url,
+  quizz,
+  correct_answers
 ) => {
   const queries = [];
 
@@ -52,6 +54,14 @@ exports.patchUserByUsername = (
 
   if (avatar_url) {
     queries.push(format(`avatar_url = %L`, avatar_url));
+  }
+
+  if (quizz) {
+    queries.push(format(`quizz = %L`, quizz));
+  }
+
+  if (correct_answers) {
+    queries.push(format(`correct_answers = %L`, correct_answers));
   }
 
   const patchQuery = format(

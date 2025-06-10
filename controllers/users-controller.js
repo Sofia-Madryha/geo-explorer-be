@@ -45,7 +45,14 @@ exports.postUser = (req, res, next) => {
 
 exports.updateUserByUsername = (req, res, next) => {
   const { username } = req.params;
-  const { level_nature, level_territory, rating, avatar_url } = req.body;
+  const {
+    level_nature,
+    level_territory,
+    rating,
+    avatar_url,
+    quizz,
+    correct_answers,
+  } = req.body;
 
   if (
     Object.keys(req.body).length === 0 ||
@@ -55,7 +62,10 @@ exports.updateUserByUsername = (req, res, next) => {
       (typeof level_territory !== "string" || !level_territory.trim())) ||
     (avatar_url !== undefined &&
       (typeof avatar_url !== "string" || !avatar_url.trim())) ||
-    (rating !== undefined && typeof rating !== "number")
+    (rating !== undefined && typeof rating !== "number") ||
+    (quizz !== undefined && typeof quizz !== "number") ||
+    (correct_answers !== undefined &&
+      (typeof correct_answers !== "string" || !correct_answers.trim()))
   ) {
     return Promise.reject({
       status: 400,
@@ -69,7 +79,9 @@ exports.updateUserByUsername = (req, res, next) => {
     level_nature,
     level_territory,
     rating,
-    avatar_url
+    avatar_url,
+    quizz,
+    correct_answers
   );
 
   Promise.all([pendingUserPatch, pendingUsernameCheck])
