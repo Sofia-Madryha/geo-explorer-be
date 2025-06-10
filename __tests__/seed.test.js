@@ -1103,6 +1103,147 @@ describe("seed", () => {
     });
   });
 
+  describe("map table", () => {
+    test("map table exists", () => {
+      return db
+        .query(
+          `SELECT EXISTS (
+            SELECT FROM information_schema.tables
+            WHERE table_name = 'map'
+          );`
+        )
+        .then(({ rows: [{ exists }] }) => {
+          expect(exists).toBe(true);
+        });
+    });
+
+    test("map table has map_id column as a serial", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type, column_default
+          FROM information_schema.columns
+          WHERE table_name = 'map'
+          AND column_name = 'map_id';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("map_id");
+          expect(column.data_type).toBe("integer");
+          expect(column.column_default).toBe(
+            "nextval('map_map_id_seq'::regclass)"
+          );
+        });
+    });
+
+    test("map table has map_id column as the primary key", () => {
+      return db
+        .query(
+          `SELECT column_name
+          FROM information_schema.table_constraints AS tc
+          JOIN information_schema.key_column_usage AS kcu
+          ON tc.constraint_name = kcu.constraint_name
+          WHERE tc.constraint_type = 'PRIMARY KEY'
+          AND tc.table_name = 'map';`
+        )
+        .then(({ rows: [{ column_name }] }) => {
+          expect(column_name).toBe("map_id");
+        });
+    });
+
+    test("map table has continent column as varying character", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type
+          FROM information_schema.columns
+          WHERE table_name = 'map'
+          AND column_name = 'continent';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("continent");
+          expect(column.data_type).toBe("character varying");
+        });
+    });
+
+    test("map table has level column as varying character", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type
+          FROM information_schema.columns
+          WHERE table_name = 'map'
+          AND column_name = 'level';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("level");
+          expect(column.data_type).toBe("character varying");
+        });
+    });
+
+    test("map table has category_id column as integer", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type
+          FROM information_schema.columns
+          WHERE table_name = 'map'
+          AND column_name = 'category_id';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("category_id");
+          expect(column.data_type).toBe("integer");
+        });
+    });
+
+    test("category_id column references category_id from the categories table", () => {
+      return db
+        .query(
+          `
+        SELECT *
+        FROM information_schema.table_constraints AS tc
+        JOIN information_schema.key_column_usage AS kcu
+          ON tc.constraint_name = kcu.constraint_name
+        JOIN information_schema.constraint_column_usage AS ccu
+          ON ccu.constraint_name = tc.constraint_name
+        WHERE tc.constraint_type = 'FOREIGN KEY'
+          AND tc.table_name = 'map'
+          AND kcu.column_name = 'category_id'
+          AND ccu.table_name = 'categories'
+          AND ccu.column_name = 'category_id';
+      `
+        )
+        .then(({ rows }) => {
+          expect(rows).toHaveLength(1);
+        });
+    });
+
+    test("map table has instruction column as varying character of max length 1000", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type, character_maximum_length
+          FROM information_schema.columns
+          WHERE table_name = 'map'
+          AND column_name = 'instruction';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("instruction");
+          expect(column.data_type).toBe("character varying");
+          expect(column.character_maximum_length).toBe(1000);
+        });
+    });
+
+    test("map table has location column as varying character of max length 1000", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type, character_maximum_length
+          FROM information_schema.columns
+          WHERE table_name = 'map'
+          AND column_name = 'location';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("location");
+          expect(column.data_type).toBe("character varying");
+          expect(column.character_maximum_length).toBe(1000);
+        });
+    });
+  });
+
   describe("data insertion", () => {
     test("categories data has been inserted correctly", () => {
       return db
@@ -1222,145 +1363,19 @@ describe("seed", () => {
         });
       });
     });
-  });
-});
-describe("map table", () => {
-  test("map table exists", () => {
-    return db
-      .query(
-        `SELECT EXISTS (
-            SELECT FROM information_schema.tables
-            WHERE table_name = 'map'
-          );`
-      )
-      .then(({ rows: [{ exists }] }) => {
-        expect(exists).toBe(true);
-      });
-  });
 
-  test("map table has map_id column as a serial", () => {
-    return db
-      .query(
-        `SELECT column_name, data_type, column_default
-          FROM information_schema.columns
-          WHERE table_name = 'map'
-          AND column_name = 'map_id';`
-      )
-      .then(({ rows: [column] }) => {
-        expect(column.column_name).toBe("map_id");
-        expect(column.data_type).toBe("integer");
-        expect(column.column_default).toBe(
-          "nextval('map_map_id_seq'::regclass)"
-        );
+    test("map data has been inserted correctly", () => {
+      return db.query(`SELECT * FROM map;`).then(({ rows: map }) => {
+        expect(map).toHaveLength(137);
+        map.forEach((eachMap) => {
+          expect(eachMap).toHaveProperty("map_id");
+          expect(eachMap).toHaveProperty("continent");
+          expect(eachMap).toHaveProperty("level");
+          expect(eachMap).toHaveProperty("category_id");
+          expect(eachMap).toHaveProperty("instruction");
+          expect(eachMap).toHaveProperty("location");
+        });
       });
-  });
-
-  test("map table has map_id column as the primary key", () => {
-    return db
-      .query(
-        `SELECT column_name
-          FROM information_schema.table_constraints AS tc
-          JOIN information_schema.key_column_usage AS kcu
-          ON tc.constraint_name = kcu.constraint_name
-          WHERE tc.constraint_type = 'PRIMARY KEY'
-          AND tc.table_name = 'map';`
-      )
-      .then(({ rows: [{ column_name }] }) => {
-        expect(column_name).toBe("map_id");
-      });
-  });
-
-  test("map table has continent column as varying character", () => {
-    return db
-      .query(
-        `SELECT column_name, data_type
-          FROM information_schema.columns
-          WHERE table_name = 'map'
-          AND column_name = 'continent';`
-      )
-      .then(({ rows: [column] }) => {
-        expect(column.column_name).toBe("continent");
-        expect(column.data_type).toBe("character varying");
-      });
-  });
-
-  test("map table has level column as varying character", () => {
-    return db
-      .query(
-        `SELECT column_name, data_type
-          FROM information_schema.columns
-          WHERE table_name = 'map'
-          AND column_name = 'level';`
-      )
-      .then(({ rows: [column] }) => {
-        expect(column.column_name).toBe("level");
-        expect(column.data_type).toBe("character varying");
-      });
-  });
-
-  test("map table has category_id column as integer", () => {
-    return db
-      .query(
-        `SELECT column_name, data_type
-          FROM information_schema.columns
-          WHERE table_name = 'map'
-          AND column_name = 'category_id';`
-      )
-      .then(({ rows: [column] }) => {
-        expect(column.column_name).toBe("category_id");
-        expect(column.data_type).toBe("integer");
-      });
-  });
-
-  test("category_id column references category_id from the categories table", () => {
-    return db
-      .query(
-        `
-        SELECT *
-        FROM information_schema.table_constraints AS tc
-        JOIN information_schema.key_column_usage AS kcu
-          ON tc.constraint_name = kcu.constraint_name
-        JOIN information_schema.constraint_column_usage AS ccu
-          ON ccu.constraint_name = tc.constraint_name
-        WHERE tc.constraint_type = 'FOREIGN KEY'
-          AND tc.table_name = 'map'
-          AND kcu.column_name = 'category_id'
-          AND ccu.table_name = 'categories'
-          AND ccu.column_name = 'category_id';
-      `
-      )
-      .then(({ rows }) => {
-        expect(rows).toHaveLength(1);
-      });
-  });
-
-  test("map table has instruction column as varying character of max length 1000", () => {
-    return db
-      .query(
-        `SELECT column_name, data_type, character_maximum_length
-          FROM information_schema.columns
-          WHERE table_name = 'map'
-          AND column_name = 'instruction';`
-      )
-      .then(({ rows: [column] }) => {
-        expect(column.column_name).toBe("instruction");
-        expect(column.data_type).toBe("character varying");
-        expect(column.character_maximum_length).toBe(1000);
-      });
-  });
-
-  test("map table has location column as varying character of max length 1000", () => {
-    return db
-      .query(
-        `SELECT column_name, data_type, character_maximum_length
-          FROM information_schema.columns
-          WHERE table_name = 'map'
-          AND column_name = 'location';`
-      )
-      .then(({ rows: [column] }) => {
-        expect(column.column_name).toBe("location");
-        expect(column.data_type).toBe("character varying");
-        expect(column.character_maximum_length).toBe(1000);
-      });
+    });
   });
 });
