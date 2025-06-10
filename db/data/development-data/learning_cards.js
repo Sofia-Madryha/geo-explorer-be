@@ -5,7 +5,7 @@ module.exports = [
     "sub_category_id": 4,
     "title": "Himalayas — Nepal",
     "description": "The Himalayas are the highest mountain range spanning Nepal, India, Bhutan, Tibet, and Pakistan. Nepal hosts Mount Everest, Earth’s tallest peak at 8,848 meters.",
-    "img_url": "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTabZSw-W3uJqrZvlt68_hzLnwW40xGu4zJQs_k7pl2i5moF9b1-HaTQ4-FURULQZw-r7kFxYQlYzK47sWUYWE7mXCBPQZN1tOKc2nag"
+    "img_url": "https://lp-cms-production.imgix.net/2021-01/GettyRF_450207051.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800"
   },
   {
     "card_id": 2,
