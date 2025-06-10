@@ -50,7 +50,8 @@ exports.updateUserByUsername = (req, res, next) => {
     level_territory,
     rating,
     avatar_url,
-    quizz,
+    nature_quiz,
+    territory_quiz,
     correct_answers,
   } = req.body;
 
@@ -63,7 +64,8 @@ exports.updateUserByUsername = (req, res, next) => {
     (avatar_url !== undefined &&
       (typeof avatar_url !== "string" || !avatar_url.trim())) ||
     (rating !== undefined && typeof rating !== "number") ||
-    (quizz !== undefined && typeof quizz !== "number") ||
+    (nature_quiz !== undefined && typeof nature_quiz !== "number") ||
+    (territory_quiz !== undefined && typeof territory_quiz !== "number") ||
     (correct_answers !== undefined &&
       (typeof correct_answers !== "string" || !correct_answers.trim()))
   ) {
@@ -80,7 +82,8 @@ exports.updateUserByUsername = (req, res, next) => {
     level_territory,
     rating,
     avatar_url,
-    quizz,
+    nature_quiz,
+    territory_quiz,
     correct_answers
   );
 

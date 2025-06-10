@@ -1061,27 +1061,54 @@ describe("seed", () => {
         });
     });
 
-    test("users table has quizz column as integer", () => {
+    test("users table has nature_quiz column as integer", () => {
       return db
         .query(
           `SELECT column_name, data_type
             FROM information_schema.columns
             WHERE table_name = 'users'
-            AND column_name = 'quizz';`
+            AND column_name = 'nature_quiz';`
         )
         .then(({ rows: [column] }) => {
-          expect(column.column_name).toBe("quizz");
+          expect(column.column_name).toBe("nature_quiz");
           expect(column.data_type).toBe("integer");
         });
     });
 
-    test("quizz column has default value as 1", () => {
+    test("nature_quiz column has default value as 1", () => {
       return db
         .query(
           `SELECT column_default
         FROM information_schema.columns
         WHERE table_name = 'users'
-        AND column_name = 'quizz';`
+        AND column_name = 'nature_quiz';`
+        )
+        .then(({ rows: [{ column_default }] }) => {
+          expect(column_default).toBe("1");
+        });
+    });
+
+    test("users table has territory_quiz column as integer", () => {
+      return db
+        .query(
+          `SELECT column_name, data_type
+            FROM information_schema.columns
+            WHERE table_name = 'users'
+            AND column_name = 'territory_quiz';`
+        )
+        .then(({ rows: [column] }) => {
+          expect(column.column_name).toBe("territory_quiz");
+          expect(column.data_type).toBe("integer");
+        });
+    });
+
+    test("territory_quiz column has default value as 1", () => {
+      return db
+        .query(
+          `SELECT column_default
+        FROM information_schema.columns
+        WHERE table_name = 'users'
+        AND column_name = 'territory_quiz';`
         )
         .then(({ rows: [{ column_default }] }) => {
           expect(column_default).toBe("1");
@@ -1358,7 +1385,8 @@ describe("seed", () => {
           expect(user).toHaveProperty("level_territory");
           expect(user).toHaveProperty("rating");
           expect(user).toHaveProperty("avatar_url");
-          expect(user).toHaveProperty("quizz");
+          expect(user).toHaveProperty("nature_quiz");
+          expect(user).toHaveProperty("territory_quiz");
           expect(user).toHaveProperty("correct_answers");
         });
       });
