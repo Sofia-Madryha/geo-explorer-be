@@ -122,36 +122,36 @@ module.exports = [
     "continent": "asia",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on India on the map",
-    "location": "India"
+    "instruction": "Which country's capital is Moscow?",
+    "location": "Russia"
   },
   {
     "continent": "asia",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on Japan on the map",
+    "instruction": "Which country's capital is Tokyo?",
     "location": "Japan"
   },
   {
     "continent": "asia",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on Kazakhstan on the map",
-    "location": "Kazakhstan"
+    "instruction": "Which country's capital is Beijing?",
+    "location": "China"
   },
   {
     "continent": "asia",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on Saudi Arabia on the map",
+    "instruction": "Which country's capital is Riyadh?",
     "location": "Saudi Arabia"
   },
   {
     "continent": "asia",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on Uzbekistan on the map",
-    "location": "Uzbekistan"
+    "instruction": "Which country's capital is Abu Dhabi?",
+    "location": "United Arab Emirates"
   },
   {
     "continent": "asia",
@@ -164,15 +164,8 @@ module.exports = [
     "continent": "asia",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Which country's capital is Beijing?",
-    "location": "China"
-  },
-  {
-    "continent": "asia",
-    "level": "Intermediate",
-    "sub_category_id": 2,
-    "instruction": "Which country's capital is Moscow?",
-    "location": "Russia"
+    "instruction": "Which country's capital is Doha?",
+    "location": "Qatar"
   },
   {
     "continent": "asia",
@@ -185,8 +178,8 @@ module.exports = [
     "continent": "asia",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Which country's capital is Tokyo?",
-    "location": "Japan"
+    "instruction": "Which country's capital is Baghdad?",
+    "location": "Iraq"
   },
   {
     "continent": "asia",
@@ -339,63 +332,63 @@ module.exports = [
     "continent": "africa",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on Nigeria",
-    "location": "Nigeria"
+    "instruction": "Which country's capital is Djibouti?",
+    "location": "Djibouti"
   },
   {
     "continent": "africa",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Cairo",
+    "instruction": "Which country's capital is Cairo?",
     "location": "Egypt"
   },
   {
     "continent": "africa",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on South Africa",
-    "location": "South Africa"
+    "instruction": "Which country's capital is Rabat?",
+    "location": "Morocco"
   },
   {
     "continent": "africa",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Addis Ababa",
+    "instruction": "Which country's capital is Addis Ababa?",
     "location": "Ethiopia"
   },
   {
     "continent": "africa",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click on Kenya",
-    "location": "Kenya"
+    "instruction": "Which country's capital is Tripoli?",
+    "location": "Libya"
   },
   {
     "continent": "africa",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Accra",
+    "instruction": "Which country's capital is Accra?",
     "location": "Ghana"
   },
   {
     "continent": "africa",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click on Algeria",
-    "location": "Algeria"
+    "instruction": "Which country's capital is Maputo?",
+    "location": "Mozambique"
   },
   {
     "continent": "africa",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Kinshasa",
+    "instruction": "Which country's capital is Kinshasa?",
     "location": "Democratic Republic of the Congo"
   },
   {
     "continent": "africa",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Dodoma",
+    "instruction": "Which country's capital is Dodoma?",
     "location": "Tanzania"
   },
     {
@@ -507,64 +500,64 @@ module.exports = [
     "continent": "europe",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click on Germany",
+    "instruction": "Which country's capital is Berlin?",
     "location": "Germany"
   },
   {
     "continent": "europe",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Paris",
+    "instruction": "Which country's capital is Paris?",
     "location": "France"
   },
   {
     "continent": "europe",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Rome",
+    "instruction": "Which country's capital is Rome?",
     "location": "Italy"
   },
   {
     "continent": "europe",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click on Ukraine",
-    "location": "Ukraine"
-  },
-  {
-    "continent": "europe",
-    "level": "Intermediate",
-    "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Madrid",
-    "location": "Spain"
-  },
-  {
-    "continent": "europe",
-    "level": "Intermediate",
-    "sub_category_id": 2,
-    "instruction": "Click on Poland",
+    "instruction": "Which country's capital is Warsaw?",
     "location": "Poland"
   },
   {
     "continent": "europe",
-    "level": "Advanced",
+    "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Oslo",
+    "instruction": "Which country's capital is Budapest",
+    "location": "Hungary"
+  },
+  {
+    "continent": "europe",
+    "level": "Intermediate",
+    "sub_category_id": 2,
+    "instruction": "Which country's capital is Oslo?",
     "location": "Norway"
   },
   {
     "continent": "europe",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital of Helsinki",
-    "location": "Finland"
+    "instruction": "Which country's capital is Bucharest",
+    "location": "Romania"
   },
   {
     "continent": "europe",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click on Czech Republic",
-    "location": "Czech Republic"
+    "instruction": "Which country's capital is Riga?",
+    "location": "Latvia"
+  },
+  {
+    "continent": "europe",
+    "level": "Advanced",
+    "sub_category_id": 2,
+    "instruction": "Which country's capital is Pristina?",
+    "location": "Kosovo"
   },
     {
     "continent": "oceania",
@@ -647,42 +640,42 @@ module.exports = [
     "continent": "oceania",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Suva",
+    "instruction": "Which country's capital is Canberra?",
+    "location": "Australia"
+  },
+  {
+    "continent": "oceania",
+    "level": "Intermediate",
+    "sub_category_id": 2,
+    "instruction": "Which country's capital is Suva?",
     "location": "Fiji"
   },
   {
     "continent": "oceania",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Port Moresby",
-    "location": "Papua New Guinea"
-  },
-  {
-    "continent": "oceania",
-    "level": "Intermediate",
-    "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Apia",
+    "instruction": "Which country's capital is Apia?",
     "location": "Samoa"
   },
   {
     "continent": "oceania",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Palikir",
+    "instruction": "Which country's capital is Palikir?",
     "location": "Micronesia"
   },
   {
     "continent": "oceania",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Funafuti",
+    "instruction": "Which country's capital is Funafuti?",
     "location": "Tuvalu"
   },
   {
     "continent": "oceania",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Yaren",
+    "instruction": "Which country's capital is Yaren?",
     "location": "Nauru"
   },
     {
@@ -780,49 +773,49 @@ module.exports = [
     "continent": "north america",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Ottawa",
+    "instruction": "Which country's capital is Ottawa?",
     "location": "Canada"
   },
   {
     "continent": "north america",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Mexico City",
+    "instruction": "Which country's capital is Mexico City?",
     "location": "Mexico"
   },
   {
     "continent": "north america",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Havana",
+    "instruction": "Which country's capital is Havana?",
     "location": "Cuba"
   },
   {
     "continent": "north america",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of San José",
+    "instruction": "Which country's capital is San José?",
     "location": "Costa Rica"
   },
   {
     "continent": "north america",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Belmopan",
+    "instruction": "Which country's capital is Belmopan?",
     "location": "Belize"
   },
   {
     "continent": "north america",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Port-au-Prince",
+    "instruction": "Which country's capital is Port-au-Prince?",
     "location": "Haiti"
   },
   {
     "continent": "north america",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Tegucigalpa",
+    "instruction": "Which country's capital is Tegucigalpa?",
     "location": "Honduras"
   },
     {
@@ -920,49 +913,49 @@ module.exports = [
     "continent": "south america",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Buenos Aires",
+    "instruction": "Which country's capital is Buenos Aires?",
     "location": "Argentina"
   },
   {
     "continent": "south america",
     "level": "Beginner",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Lima",
+    "instruction": "Which country's capital is Lima?",
     "location": "Peru"
   },
   {
     "continent": "south america",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Quito",
+    "instruction": "Which country's capital is Quito?",
     "location": "Ecuador"
   },
   {
     "continent": "south america",
     "level": "Intermediate",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Santiago",
+    "instruction": "Which country's capital is Santiago?",
     "location": "Chile"
   },
   {
     "continent": "south america",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Paramaribo",
+    "instruction": "Which country's capital is Paramaribo?",
     "location": "Suriname"
   },
   {
     "continent": "south america",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Georgetown",
+    "instruction": "Which country's capital is Georgetown?",
     "location": "Guyana"
   },
   {
     "continent": "south america",
     "level": "Advanced",
     "sub_category_id": 2,
-    "instruction": "Click the country with the capital city of Asunción",
+    "instruction": "Which country's capital is Asunción?",
     "location": "Paraguay"
   }
 ]
