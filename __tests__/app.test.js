@@ -719,3 +719,68 @@ describe("5 Matching pairs - GET /api/matching-pairs", () => {
       });
   });
 });
+describe("6. Map Questions - GET /api/map", () => {
+  test("6a. 200: returns all map questions with expected shape", () => {
+    return request(app)
+      .get("/api/map")
+      .expect(200)
+      .then(({ body }) => {
+        expect(Array.isArray(body.mapQuestions)).toBe(true);
+        expect(body.mapQuestions.length).toBe(137);
+        body.mapQuestions.forEach((item) => {
+          expect(item).toMatchObject({
+            map_id: expect.any(Number),
+            continent: expect.any(String),
+            level: expect.any(String),
+            category_id: expect.any(Number),
+            instruction: expect.any(String),
+            location: expect.any(String),
+          });
+        });
+      });
+  });
+
+  test("6b. 200: returns map questions filtered by continent (asia)", () => {
+    return request(app)
+      .get("/api/map?continent=asia")
+      .expect(200)
+      .then(({ body }) => {
+        expect(Array.isArray(body.mapQuestions)).toBe(true);
+        expect(body.mapQuestions.length).toBe(32);
+        body.mapQuestions.forEach((item) => {
+          expect(item.continent.toLowerCase()).toBe("asia");
+        });
+      });
+  });
+
+  test("6c. 200: returns map questions filtered by level (Beginner) and category territories", () => {
+    return request(app)
+      .get("/api/map?level=Beginner&category_id=2")
+      .expect(200)
+      .then(({ body }) => {
+        expect(Array.isArray(body.mapQuestions)).toBe(true);
+        expect(body.mapQuestions.length).toBe(16);
+        body.mapQuestions.forEach((item) => {
+          expect(item.level).toBe("Beginner");
+        });
+      });
+  });
+
+  test("6d. 400: returns Bad Request for invalid continent", () => {
+    return request(app)
+      .get("/api/map?continent=asiaasiaasia")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("400 Bad Request");
+      });
+  });
+
+  test("6e. 404: returns Not Found if no map questions found", () => {
+    return request(app)
+      .get("/api/map?category_id=999")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("404 Not Found");
+      });
+  });
+});

@@ -4,3 +4,4 @@ exports.learningCardsRouter = require("./learningCards-Router");
 exports.multiChoiceQARouter = require("./multichoice-qa-router");
 exports.subCategoriesRouter = require("./subcategories-router");
 exports.matchingPairsRouter = require("./matchingPairs-router");
+exports.mapRouter = require = require("./map-router");
