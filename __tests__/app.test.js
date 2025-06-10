@@ -195,7 +195,8 @@ describe(" GET /api/users", () => {
             level_territory: expect.any(String),
             rating: expect.any(Number),
             avatar_url: expect.any(String),
-            quizz: expect.any(Number),
+            nature_quiz: expect.any(Number),
+            territory_quiz: expect.any(Number),
             correct_answers: expect.any(String),
           });
         });
@@ -222,7 +223,8 @@ describe(" POST /api/users", () => {
           level_territory: "Beginner",
           rating: 0,
           avatar_url: "https://avatar.iran.liara.run/public/23",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: null,
         });
       });
@@ -327,7 +329,8 @@ describe(" GET /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 60,
           avatar_url: "https://avatar.iran.liara.run/public/77",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
@@ -359,7 +362,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
@@ -380,7 +384,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Advanced",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
@@ -401,7 +406,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 100,
           avatar_url: "https://avatar.iran.liara.run/public/12",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
@@ -422,7 +428,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "newUrl",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
@@ -443,7 +450,8 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 50,
           avatar_url: "https://avatar.iran.liara.run/public/12",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
@@ -510,7 +518,7 @@ describe(" PATCH /api/users/:username", () => {
   });
 
   test("11 200: Respond with an updated user object with updated quizz", () => {
-    const patchObj = { quizz: 3 };
+    const patchObj = { nature_quiz: 3 };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -524,13 +532,36 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
-          quizz: 3,
+          nature_quiz: 3,
+          territory_quiz: 1,
           correct_answers: "",
         });
       });
   });
 
-  test("12 200: Respond with an updated user object with updated correct_answers", () => {
+  test("12 200: Respond with an updated user object with updated quizz", () => {
+    const patchObj = { territory_quiz: 2 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 2,
+          correct_answers: "",
+        });
+      });
+  });
+
+  test("13 200: Respond with an updated user object with updated correct_answers", () => {
     const patchObj = { correct_answers: "[1, 2, 3]" };
 
     return request(app)
@@ -545,14 +576,15 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
-          quizz: 1,
+          nature_quiz: 1,
+          territory_quiz: 1,
           correct_answers: "[1, 2, 3]",
         });
       });
   });
 
-  test("13 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
-    const patchObj = { quizz: "3" };
+  test("14 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { nature_quiz: "3" };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -563,7 +595,19 @@ describe(" PATCH /api/users/:username", () => {
       });
   });
 
-  test("14 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+  test("15 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { territory_quiz: "3" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("16 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
     const patchObj = { correct_answers: 12 };
 
     return request(app)
@@ -575,7 +619,7 @@ describe(" PATCH /api/users/:username", () => {
       });
   });
 
-  test("15 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
+  test("17 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
     const patchObj = { correct_answers: " " };
 
     return request(app)

@@ -101,7 +101,8 @@ const seed = ({
             level_territory VARCHAR(20) DEFAULT 'Beginner',
             rating INT DEFAULT 0,
             avatar_url VARCHAR(1000) NOT NULL,
-            quizz INT DEFAULT 1,
+            nature_quiz INT DEFAULT 1,
+            territory_quiz INT DEFAULT 1,
             correct_answers TEXT
           );`)
     )
@@ -249,7 +250,8 @@ const seed = ({
           level_territory,
           rating,
           avatar_url,
-          quizz,
+          nature_quiz,
+          territory_quiz,
           correct_answers,
         }) => [
           username,
@@ -257,12 +259,13 @@ const seed = ({
           level_territory,
           rating,
           avatar_url,
-          quizz,
+          nature_quiz,
+          territory_quiz,
           correct_answers,
         ]
       );
       const insertUsersQuery = format(
-        `INSERT INTO users(username, level_nature, level_territory, rating, avatar_url, quizz, correct_answers) VALUES %L`,
+        `INSERT INTO users(username, level_nature, level_territory, rating, avatar_url, nature_quiz, territory_quiz, correct_answers) VALUES %L`,
         formattedUsers
       );
       return db.query(insertUsersQuery);
