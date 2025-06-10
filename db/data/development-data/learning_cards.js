@@ -93,7 +93,7 @@ module.exports = [
     "sub_category_id": 3,
     "title": "Amur River — Russia/China",
     "description": "Forms part of the border between Russia and China, flowing into the Sea of Okhotsk. Known for diverse wildlife and natural resources.",
-    "img_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ_ze3aJwpBjOwSNqThSFsYUoPPAE2HJLZiRgvPQc5-PcJIa1uedUTWpXHKnpj3WuvNQ7HN0z5XiTsxkT7g_SUWiGxZELRsJJA0uZ4iNQ"
+    "img_url": "https://media.rnztools.nz/rnz/image/upload/s--8tg9-Aql--/c_scale,f_auto,q_auto,w_1050/v1644517875/4M1W10L_copyright_image_278825?_a=BACCd2AD"
   },
   {
     "card_id": 13,
@@ -125,7 +125,7 @@ module.exports = [
     "sub_category_id": 3,
     "title": "Arabian Sea",
     "description": "Part of the northern Indian Ocean, bordered by India, Pakistan, Iran, and the Arabian Peninsula. Vital for trade routes and rich in marine life.",
-    "img_url": "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcT9OcS-7PkrdIgnLYfbJTzOJAi5NQF7xrYg6a6LiMYM6706pJrpiZEQBaN1zcpobC0phcL4XxkaOHDKezJPXNvuJOTzGqvd6YvvHKoguQ"
+    "img_url": "https://www.bluebird-electric.net/oceanography/ocean_pictures/Arabian_Sea_Astola_Island.jpg"
   },
   {
     "card_id": 17,
