@@ -366,7 +366,7 @@ describe(" PATCH /api/users/:username", () => {
   });
 
   test("2 200: Respond with an updated user object with updated level_territory", () => {
-    const patchObj = { level_territory: "Advance" };
+    const patchObj = { level_territory: "Advanced" };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -377,7 +377,7 @@ describe(" PATCH /api/users/:username", () => {
           user_id: 4,
           username: "mike_w",
           level_nature: "Beginner",
-          level_territory: "Advance",
+          level_territory: "Advanced",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
           quizz: 1,
