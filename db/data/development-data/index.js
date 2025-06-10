@@ -6,3 +6,4 @@ exports.questionsMultipleChoicesData = require("./questions-multiple-choices.js"
 exports.questionsMatchingPairsData = require("./questions-matching-pairs.js");
 exports.answersMatchingPairsData = require("./answers-matching-pairs.js");
 exports.usersData = require("./users.js");
+exports.mapData = require("./click-on-map.js");
