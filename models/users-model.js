@@ -34,7 +34,10 @@ exports.patchUserByUsername = (
   level_nature,
   level_territory,
   rating,
-  avatar_url
+  avatar_url,
+  nature_quiz,
+  territory_quiz,
+  correct_answers
 ) => {
   const queries = [];
 
@@ -52,6 +55,18 @@ exports.patchUserByUsername = (
 
   if (avatar_url) {
     queries.push(format(`avatar_url = %L`, avatar_url));
+  }
+
+  if (nature_quiz) {
+    queries.push(format(`nature_quiz = %L`, nature_quiz));
+  }
+
+  if (territory_quiz) {
+    queries.push(format(`territory_quiz = %L`, territory_quiz));
+  }
+
+  if (correct_answers) {
+    queries.push(format(`correct_answers = %L`, correct_answers));
   }
 
   const patchQuery = format(

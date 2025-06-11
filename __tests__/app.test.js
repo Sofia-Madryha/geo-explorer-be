@@ -195,6 +195,9 @@ describe(" GET /api/users", () => {
             level_territory: expect.any(String),
             rating: expect.any(Number),
             avatar_url: expect.any(String),
+            nature_quiz: expect.any(Number),
+            territory_quiz: expect.any(Number),
+            correct_answers: expect.any(String),
           });
         });
       });
@@ -220,6 +223,9 @@ describe(" POST /api/users", () => {
           level_territory: "Beginner",
           rating: 0,
           avatar_url: "https://avatar.iran.liara.run/public/23",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: null,
         });
       });
   });
@@ -323,6 +329,9 @@ describe(" GET /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 60,
           avatar_url: "https://avatar.iran.liara.run/public/77",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "",
         });
       });
   });
@@ -353,12 +362,15 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "",
         });
       });
   });
 
   test("2 200: Respond with an updated user object with updated level_territory", () => {
-    const patchObj = { level_territory: "advance" };
+    const patchObj = { level_territory: "Advanced" };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -369,9 +381,12 @@ describe(" PATCH /api/users/:username", () => {
           user_id: 4,
           username: "mike_w",
           level_nature: "Beginner",
-          level_territory: "advance",
+          level_territory: "Advanced",
           rating: 15,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "",
         });
       });
   });
@@ -391,6 +406,9 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 100,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "",
         });
       });
   });
@@ -410,6 +428,9 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 15,
           avatar_url: "newUrl",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "",
         });
       });
   });
@@ -429,6 +450,9 @@ describe(" PATCH /api/users/:username", () => {
           level_territory: "Intermediate",
           rating: 50,
           avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "",
         });
       });
   });
@@ -483,6 +507,120 @@ describe(" PATCH /api/users/:username", () => {
 
   test("10 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
     const patchObj = { level_nature: " " };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("11 200: Respond with an updated user object with updated quizz", () => {
+    const patchObj = { nature_quiz: 3 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 3,
+          territory_quiz: 1,
+          correct_answers: "",
+        });
+      });
+  });
+
+  test("12 200: Respond with an updated user object with updated quizz", () => {
+    const patchObj = { territory_quiz: 2 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 2,
+          correct_answers: "",
+        });
+      });
+  });
+
+  test("13 200: Respond with an updated user object with updated correct_answers", () => {
+    const patchObj = { correct_answers: "[1, 2, 3]" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(200)
+      .then(({ body: { user } }) => {
+        expect(user).toMatchObject({
+          user_id: 4,
+          username: "mike_w",
+          level_nature: "Beginner",
+          level_territory: "Intermediate",
+          rating: 15,
+          avatar_url: "https://avatar.iran.liara.run/public/12",
+          nature_quiz: 1,
+          territory_quiz: 1,
+          correct_answers: "[1, 2, 3]",
+        });
+      });
+  });
+
+  test("14 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { nature_quiz: "3" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("15 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { territory_quiz: "3" };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("16 400: Respond with Bad Request! msg when trying to update user with wrong datatype in patch object", () => {
+    const patchObj = { correct_answers: 12 };
+
+    return request(app)
+      .patch("/api/users/mike_w")
+      .send(patchObj)
+      .expect(400)
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Bad Request!");
+      });
+  });
+
+  test("17 400: Respond with Bad Request! msg when trying to update user with empty string in patch object", () => {
+    const patchObj = { correct_answers: " " };
 
     return request(app)
       .patch("/api/users/mike_w")
@@ -575,6 +713,71 @@ describe("5 Matching pairs - GET /api/matching-pairs", () => {
   test("5f. 404: returns Not Found if no matching pairs for given filters", () => {
     return request(app)
       .get("/api/matching-pairs?category_id=9999&continent=asia&level=Beginner")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("404 Not Found");
+      });
+  });
+});
+describe("6. Map Questions - GET /api/map", () => {
+  test("6a. 200: returns all map questions with expected shape", () => {
+    return request(app)
+      .get("/api/map")
+      .expect(200)
+      .then(({ body }) => {
+        expect(Array.isArray(body.mapQuestions)).toBe(true);
+        expect(body.mapQuestions.length).toBe(137);
+        body.mapQuestions.forEach((item) => {
+          expect(item).toMatchObject({
+            map_id: expect.any(Number),
+            continent: expect.any(String),
+            level: expect.any(String),
+            category_id: expect.any(Number),
+            instruction: expect.any(String),
+            location: expect.any(String),
+          });
+        });
+      });
+  });
+
+  test("6b. 200: returns map questions filtered by continent (asia)", () => {
+    return request(app)
+      .get("/api/map?continent=asia")
+      .expect(200)
+      .then(({ body }) => {
+        expect(Array.isArray(body.mapQuestions)).toBe(true);
+        expect(body.mapQuestions.length).toBe(32);
+        body.mapQuestions.forEach((item) => {
+          expect(item.continent.toLowerCase()).toBe("asia");
+        });
+      });
+  });
+
+  test("6c. 200: returns map questions filtered by level (Beginner) and category territories", () => {
+    return request(app)
+      .get("/api/map?level=Beginner&category_id=2")
+      .expect(200)
+      .then(({ body }) => {
+        expect(Array.isArray(body.mapQuestions)).toBe(true);
+        expect(body.mapQuestions.length).toBe(16);
+        body.mapQuestions.forEach((item) => {
+          expect(item.level).toBe("Beginner");
+        });
+      });
+  });
+
+  test("6d. 400: returns Bad Request for invalid continent", () => {
+    return request(app)
+      .get("/api/map?continent=asiaasiaasia")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("400 Bad Request");
+      });
+  });
+
+  test("6e. 404: returns Not Found if no map questions found", () => {
+    return request(app)
+      .get("/api/map?category_id=999")
       .expect(404)
       .then(({ body }) => {
         expect(body.msg).toBe("404 Not Found");
