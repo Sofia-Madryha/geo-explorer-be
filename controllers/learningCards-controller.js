@@ -5,8 +5,8 @@ const {
 exports.getLearningCards = (req, res, next) => {
   const { sub_category_id, continent, page } = req.query;
 
-  const pageNum = page ? parseInt(page, 5) : 1;
-  const limit = 5;
+  const pageNum = page ? parseInt(page, 10) : 1;
+  const limit = 10;
   const offset = (pageNum - 1) * limit;
 
   selectLearningCardsByFilters(sub_category_id, continent, offset, limit)
