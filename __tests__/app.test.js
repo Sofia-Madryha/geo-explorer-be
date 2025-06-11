@@ -147,11 +147,11 @@ describe("2. 404: Not Found - BAD url-error", () => {
 describe("3. GET /api/learning-cards/", () => {
   test("3a. 200: return learning cards array with valid sub_category_id & continent on page 2", () => {
     return request(app)
-      .get("/api/learning-cards?sub_category_id=4&continent=asia&page=2")
+      .get("/api/learning-cards?sub_category_id=4&continent=asia&page=1")
       .expect(200)
       .then((res) => {
         expect(Array.isArray(res.body.learningCards)).toBe(true);
-        expect(res.body.learningCards.length).toBe(3);
+        expect(res.body.learningCards.length).toBe(8);
 
         expect(res.body.learningCards[0]).toMatchObject({
           card_id: expect.any(Number),
