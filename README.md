@@ -1,4 +1,4 @@
-<p align="center"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=6ED788&center=true&vCenter=true&width=665&height=60&lines=Built+with+Node.js%2C+Express%2C+and+PostgreSQL." alt="Typing SVG" /></a></p>
+<p align="center"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=6ED788&center=true&vCenter=true&width=665&height=60&lines=Built+with+Node.js%2C+Express.js%2C+and+PostgreSQL." alt="Typing SVG" /></a></p>
 
 <div align="center">
   
