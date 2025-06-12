@@ -1,7 +1,14 @@
+<p align="center"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&pause=1000&color=6ED788&center=true&vCenter=true&width=840&height=100&lines=Built+with+Node.js%2C+Express.js+and+PostgreSQL." alt="Typing SVG" /></a></p>
+
+<div align="center">
+  
+[![Test & Deploy](https://github.com/Sofia-Madryha/geo-explorer-be/actions/workflows/test-and-deploy.yml/badge.svg?branch=main)](https://github.com/Sofia-Madryha/geo-explorer-be/actions/workflows/test-and-deploy.yml)
+
+</div>
+
 # 🌍 Geo Explorer API
 
-An educational REST API built to support interactive geography learning through learning cards, matching pairs, multiple-choice quizzes, and more. Built with **Node.js**, **Express**, and **PostgreSQL**.
-
+An educational REST API built to support interactive geography learning through learning cards, matching pairs, multiple-choice quizzes, and more.
 <br/>
 
 ## 🚀 Live Demo
@@ -27,6 +34,7 @@ Use `/api` to view all available endpoints.
   - [🧪 Running Tests](#-running-tests)
   - [📖 API Documentation](#-api-documentation)
     - [🔑 Core Endpoints](#-core-endpoints)
+  - [🧑‍🤝‍🧑 Credits](#-credits)
 
 <br />
 
@@ -46,7 +54,7 @@ Use `/api` to view all available endpoints.
 
 ## 🛠️ Tech Stack
 
-<p align="left"> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node js" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express js" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="jest" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="postgresql" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white" alt="supabase" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="render" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="git" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Github%20Actions-282a2e?style=for-the-badge&logo=githubactions&logoColor=367cfe" alt="github action" /></a> </p>
+<p align="left"> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node js" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express js" /></a> <a href="https://badges.pages.dev/" ><img src="https://img.shields.io/badge/.ENV-ECD53F?logo=dotenv&logoColor=000&style=for-the-badge" alt="dotenv" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="jest" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="postgresql" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white" alt="supabase" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="render" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="git" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Github%20Actions-282a2e?style=for-the-badge&logo=githubactions&logoColor=367cfe" alt="github action" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="vscode" /></a> <a href="https://badges.pages.dev/" ><img src="https://img.shields.io/badge/Excalidraw-6965DB?logo=excalidraw&logoColor=fff&style=for-the-badge" alt="excalidraw" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="figma" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" alt="trello" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Google%20Docs-4285F4?style=for-the-badge&logo=google-docs&logoColor=white" alt="google doc" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white" alt="google sheet" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="slack" /></a> <a href="https://github.com/alexandresanlim/Badges4-README.md-Profile" ><img src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white" alt="zoom" /></a> </p>
 
 <br/>
 
@@ -194,7 +202,14 @@ Alternatively, refer to the included [`endpoints.json`](./endpoints.json) file.
 | GET    | `/api/multichoice-qa`  | Get multiple choice questions (filters: `category_id`, `continent`, `level`)    |
 | GET    | `/api/map`             | Get map-based questions                                                         |
 
+<br />
+
+## 🧑‍🤝‍🧑 Credits
+
+Created with ❤️ by **Route 66** Team @ Northcoders
+
+Team Members: [**Sofiia Madryha**](https://github.com/Sofia-Madryha), [**Nayden Hristov**](https://github.com/naydenhristov), [**Wai Yan Sze**](https://github.com/snorlaxcwy), [**Mohammed Humadi**](https://github.com/mhum9896), [**Catarina Sapateiro**](https://github.com/catarinasapateiro), [**Phone Sett Paing**](https://github.com/PhoneSettPaing)
+
 ---
 
-This group project was built as part of the Software Development Bootcamp in JavaScript
-course provided by [**Northcoders**](https://www.northcoders.com/) to demonstrate skills in collaboration, backend development, RESTful architecture, and test-driven development.
+This group project was built as part of the **Software Development Bootcamp in JavaScript** course provided by [**Northcoders**](https://www.northcoders.com/) to demonstrate skills in **collaboration, backend development, RESTful architecture,** and **test-driven development**.
