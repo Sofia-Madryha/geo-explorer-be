@@ -1,7 +1,14 @@
+<p align="center"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=6ED788&center=true&vCenter=true&width=665&height=60&lines=Built+with+Node.js%2C+Express%2C+and+PostgreSQL." alt="Typing SVG" /></a></p>
+
+<div align="center">
+  
+[![Test & Deploy](https://github.com/Sofia-Madryha/geo-explorer-be/actions/workflows/test-and-deploy.yml/badge.svg?branch=main)](https://github.com/Sofia-Madryha/geo-explorer-be/actions/workflows/test-and-deploy.yml)
+
+</div>
+
 # 🌍 Geo Explorer API
 
-An educational REST API built to support interactive geography learning through learning cards, matching pairs, multiple-choice quizzes, and more. Built with **Node.js**, **Express**, and **PostgreSQL**.
-
+An educational REST API built to support interactive geography learning through learning cards, matching pairs, multiple-choice quizzes, and more.
 <br/>
 
 ## 🚀 Live Demo
@@ -27,6 +34,7 @@ Use `/api` to view all available endpoints.
   - [🧪 Running Tests](#-running-tests)
   - [📖 API Documentation](#-api-documentation)
     - [🔑 Core Endpoints](#-core-endpoints)
+  - [🧑‍🤝‍🧑 Credits](#-credits)
 
 <br />
 
@@ -193,6 +201,14 @@ Alternatively, refer to the included [`endpoints.json`](./endpoints.json) file.
 | GET    | `/api/matching-pairs`  | Get matching pairs (filterable by `category_id`, `continent`, `level`)          |
 | GET    | `/api/multichoice-qa`  | Get multiple choice questions (filters: `category_id`, `continent`, `level`)    |
 | GET    | `/api/map`             | Get map-based questions                                                         |
+
+<br />
+
+## 🧑‍🤝‍🧑 Credits
+
+Developed by the **Route 66** Team @ Northcoders
+
+Team Members: [**Sofiia Madryha**](https://github.com/Sofia-Madryha), [**Nayden Hristov**](https://github.com/naydenhristov), [**Wai Yan Sze**](https://github.com/snorlaxcwy), [**Mohammed Humadi**](https://github.com/mhum9896), [**Catarina Sapateiro**](https://github.com/catarinasapateiro), [**Phone Sett Paing**](https://github.com/PhoneSettPaing)
 
 ---
 
